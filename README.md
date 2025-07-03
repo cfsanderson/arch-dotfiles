@@ -10,7 +10,7 @@ At the beginning of this year, I tried Omakub and when that was too opinionated,
 
 I've been managing my dotfiles for years with the the "bare repository and alias method" popularized on this [Hacker News thread](https://news.ycombinator.com/item?id=11070797). It worked, mostly.
 
-Since I'm venturing into the uncharted waters of Arch, I thought I'd try something new (to me) and Stow seemed the obvious choice. This configuration strives to respect the **XDG Base Directory Specification**, keeping `~` clean by favoring `~/.config`.
+Since I'm venturing into the uncharted waters of Arch, I thought I'd try something new (to me) and [Stow](https://www.gnu.org/software/stow/) seemed the obvious choice. This configuration strives to respect the **XDG Base Directory Specification**, keeping `~` clean by favoring `~/.config`.
 
 The core principles are:
 *   **Modular:** Each program's configuration is a self-contained "package" (e.g., `zsh`, `tmux`).
@@ -31,7 +31,7 @@ sudo pacman -S stow git
 ### 2. Clone the Repository
 Clone this repository into a dedicated `Projects` directory.
 
-```bash
+```bash]()
 git clone https://github.com/cfsanderson/arch-dotfiles.git ~/Projects/arch-dotfiles
 ```
 
