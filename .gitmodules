@@ -1,3 +1,4 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = https://github.com/cfsanderson/kickstart-cfs.nvim.git
+	branch = main
