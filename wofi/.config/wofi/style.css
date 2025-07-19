@@ -1,6 +1,4 @@
-@define-color	selected-text  #fabd2f;
-@define-color	text  #ebdbb2;
-@define-color	base  #282828;
+/* Colors are defined by theme file and can be referenced via @base, @text, @selected-text, and @border */
 
 * {
   font-family: 'CaskaydiaMono Nerd Font', monospace;
@@ -26,6 +24,7 @@ window {
   padding: 20px;
   border: none;
   background-color: @base;
+  border: 2px solid @border;
 }
 
 #scroll {
@@ -71,3 +70,5 @@ window {
 #entry image {
   -gtk-icon-transform: scale(0.7);
 }
+
+@import "/home/caleb/.config/theme/wofi.css";
