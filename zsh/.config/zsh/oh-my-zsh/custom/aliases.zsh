@@ -42,7 +42,7 @@ alias wiki='cd $HOME/Projects/wiki && nv index.md'
 
 # Configs
 alias conf='/usr/bin/git --git-dir=$HOME/.cfs-dotfiles/ --work-tree=$HOME'
-alias confalacritty='cd $HOME/.config/alacritty/ && nvim alacritty.toml'
+alias confalacritty='cd $HOME/Projects/arch-dotfiles/alacritty/.config/alacritty/ && nvim .'
 alias confalias='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/ && nvim aliases.zsh'
 alias confhypr='cd $HOME/Projects/arch-dotfiles/hyprland/.config/hypr/ && nvim .'
 alias conftmux='cd $HOME/Projects/arch-dotfiles/tmux/.config/tmux/ && nvim .'

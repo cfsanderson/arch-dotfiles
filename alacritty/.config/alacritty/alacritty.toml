@@ -1,31 +1,42 @@
-general.import = [ "~/.config/alacritty/alacritty.toml" ]
-
-[env]
-TERM = "xterm-256color"
-
-[font]
-normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
-bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
-italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
-size = 9
+# @csanderson Alacritty config
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
 
 [window]
-padding.x = 14
-padding.y = 14
-decorations = "None"
-opacity = 0.98
+position = { x = 0, y = 0 }
+padding = { x = 12, y = 12}
+decorations = "Buttonless"
+startup_mode = "Maximized"
+opacity = 1
+title = "cfsanderson"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+unfocused_hollow = true
+blink_interval = 750
 
 [keyboard]
 bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
+    { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
+    { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+    { key = "End", mods = "Shift", action = "ScrollToBottom" },
+    { key = "Home", mods = "Shift", action = "ScrollToTop" },
 ]
 
-# Colors
-[colors]
-primary = { background = "#121212", foreground = "#DCC9AC" }
-normal = { black = "#3c3836", red = "#b85651", green = "#8f9a52", yellow = "#c18f41", blue = "#68948a", magenta = "#ab6c7d", cyan = "#72966c", white = "#ada291" }
-bright = { black = "#5a524c", red = "#b85651", green = "#a9b665", yellow = "#d8a657", blue = "#7daea3", magenta = "#d3869b", cyan = "#89b482", white = "#dcc6a3" }
-selection = { text = "0xffffff", background = "0x0b0d0f" }
-footer_bar = { foreground = "#1d1f21", background = "#c5c8c6" }
-draw_bold_text_with_bright_colors = true
+[debug]
+persistent_logging = false
+
+[general]
+import = [
+"~/.config/alacritty/colors.toml",
+"~/.config/alacritty/fonts.toml",
+]
+
+[terminal]
 
