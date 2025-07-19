@@ -22,6 +22,8 @@ mkdir_cd() {
 }
 alias notes='cd $HOME/Projects/.notes && nvim 003_DUMP.md'
 alias nv='nvim'
+alias pbcopy='wl-copy'
+alias pbpaste='wl-paste'
 alias sourz='source $HOME/.config/zsh/.zshrc'
 alias st='speedtest'
 alias to=touch_open
