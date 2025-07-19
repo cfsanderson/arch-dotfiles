@@ -1,4 +1,4 @@
-# font-family = "FiraCode Nerd Font"
+font-family = "FiraCode Nerd Font"
 font-size = 9
 background-blur-radius = 20
 mouse-hide-while-typing = true
@@ -11,7 +11,6 @@ window-padding-y = 10
 quit-after-last-window-closed=true
 confirm-close-surface=false
 
-# keybind = Backspace=SendChars("\x7f")
 keybind = alt+kp_left=unbind
 keybind = alt+kp_left=unbind
 
@@ -40,7 +39,6 @@ foreground = #DCC6A3
 
 cursor-color = #ADA291
 cursor-text = #121212
-# cursor-shape = block
 
 selection-background = #DCC6A3
 selection-foreground = #121212
