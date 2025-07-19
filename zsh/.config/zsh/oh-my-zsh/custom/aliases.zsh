@@ -10,6 +10,7 @@
 
 # General
 alias c='clear'
+alias dots='cd $HOME/Projects/arch-dotfiles/' 
 alias dropbox='cd /Users/caleb/Library/CloudStorage/Dropbox/'
 alias gs='git switch'
 alias home='cd $HOME && clear && fastfetch'
@@ -43,7 +44,6 @@ alias wiki='cd $HOME/Projects/wiki && nv index.md'
 alias conf='/usr/bin/git --git-dir=$HOME/.cfs-dotfiles/ --work-tree=$HOME'
 alias confalacritty='cd $HOME/.config/alacritty/ && nvim alacritty.toml'
 alias confalias='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/ && nvim aliases.zsh'
-alias confdot='cd $HOME/Projects/arch-dotfiles/ && nvim .'
 alias confhypr='cd $HOME/Projects/arch-dotfiles/hyprland/.config/hypr/ && nvim .'
 alias conftmux='cd $HOME/Projects/arch-dotfiles/tmux/.config/tmux/ && nvim .'
 alias confnv='cd $HOME/Projects/arch-dotfiles/nvim/.config/nvim/ && nvim init.lua'
