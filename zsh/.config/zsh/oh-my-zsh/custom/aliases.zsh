@@ -46,5 +46,5 @@ alias confalias='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custo
 alias confdot='cd $HOME/Projects/arch-dotfiles/ && nvim .'
 alias confhypr='cd $HOME/Projects/arch-dotfiles/hyprland/.config/hypr/ && nvim .'
 alias conftmux='cd $HOME/Projects/arch-dotfiles/tmux/.config/tmux/ && nvim .'
-alias confnv='cd $HOME/.config/nvim/ && nvim init.lua'
+alias confnv='cd $HOME/Projects/arch-dotfiles/nvim/.config/nvim/ && nvim init.lua'
 alias confzsh='cd $HOME/.config/zsh/ && nvim .zshrc'
