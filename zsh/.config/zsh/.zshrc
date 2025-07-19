@@ -49,5 +49,6 @@ COMPLETION_WAITING_DOTS="true"
 # SSH key path
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+fastfetch
 # FZF
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
