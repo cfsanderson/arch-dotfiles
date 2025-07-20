@@ -21,7 +21,7 @@ mkdir_cd() {
     cd -P -- "$1" &&
     ls -la
 }
-alias notes='cd $HOME/Projects/.notes && nvim 003_DUMP.md'
+alias notes='cd $HOME/Projects/.notes && nvim .'
 alias nv='nvim'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
