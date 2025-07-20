@@ -1,4 +1,4 @@
-# 🚀 I'm using Arch now (by the way)...
+# "I use Arch now (by the way)..."
 
 At the beginning of this year, I tried Omakub and when that was too opinionated, I even tried ricing my own custom [Hyprland](https://hypr.land/) setup but got bogged down and retreated back to Pop!_OS (Cosmic). When I heard about DHH's **[Omarchy](https://github.com/basecamp/omarchy)** project, I knew I had to give it a try. This configuration is heavily inspired by the principles of digital sovereignty and self-reliance championed by DHH and the Linux crowd, but I also see it as a design exercise. As a product designer, I'm constantly working within fairly narrow product constraints. What could be more liberating than building your own, bespoke digital environment??! I'm mostly just having fun on an old 2015 Macbook Pro, trying to own my own setup and understand how it works.
 
