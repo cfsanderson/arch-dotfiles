@@ -39,6 +39,8 @@ touch_open() {
 # alias tmux='env TERM=screen-256color tmux'
 alias tp='trash-put'
 alias wiki='cd $HOME/Projects/wiki && nv index.md'
+alias yt='yt-dlp'
+alias ytm='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0'
 
 # Configs
 alias conf='/usr/bin/git --git-dir=$HOME/.cfs-dotfiles/ --work-tree=$HOME'
