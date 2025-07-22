@@ -9,6 +9,8 @@
 #                               @cfsanderson
 
 # General
+alias archnotes='cd $HOME/Dropbox/arch-notes/ && nvim .'
+alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'
 alias c='clear'
 alias dots='cd $HOME/Projects/arch-dotfiles/' 
 alias dropbox='cd /Users/caleb/Library/CloudStorage/Dropbox/'
@@ -21,7 +23,6 @@ mkdir_cd() {
     cd -P -- "$1" &&
     ls -la
 }
-alias notes='cd $HOME/Projects/.notes && nvim .'
 alias nv='nvim'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
