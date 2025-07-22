@@ -5,7 +5,9 @@ clipse 1.1.0-1
 dropbox-cli 2024.04.17-2
 lazydocker 0.24.1-1
 pinta 3.0.2-1
+rmpc-git 0.9.0.r29.gf0c0a1e-1
 typora 1.10.8-1
+windsurf 1.11.0-1
 yay-bin 12.5.0-1
 yay-bin-debug 12.5.0-1
 zoom 6.5.3-1
