@@ -66,14 +66,21 @@ After rebooting, you will be in a minimal Hyprland session.
 
 ### Phase 3: Deploy Custom Environment
 
+1. **Create the Monitor Configuration:**
+    Before stowing, you must create a machine-specific monitor configuration. Hyprland will not start without it. Create the file:
+    ```
+    nvim ~/.config/hypr/monitors.conf
+    ```
+    Add a line for your specific monitor. To find your monitor's name, run `hyprctl monitors`.
+
 This is where this dotfiles repository takes over.
 
-1.  **Clone Your Dotfiles Repository (with Submodules):**
+2.  **Clone Your Dotfiles Repository (with Submodules):**
     ```bash
     git clone --recurse-submodules https://github.com/cfsanderson/arch-dotfiles.git ~/Projects/arch-dotfiles
     ```
 
-2.  **Run the Automated Install Script:**
+3.  **Run the Automated Install Script:**
     This script will install all packages and stow all dotfiles.
     ```bash
     cd ~/Projects/arch-dotfiles
