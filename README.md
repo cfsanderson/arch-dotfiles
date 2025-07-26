@@ -122,8 +122,8 @@ sudo nvim /etc/mkinitcpio.conf
 **d) Fix Keyboard Backlight Permissions:**
 This allows your user to control the keyboard backlight without `sudo`.
 ```bash
-# Add your user to the 'input' group (replace 'caleb' if needed)
-sudo usermod -aG input caleb
+# Add your user to the 'input' group (replace '<your-user-name>' if needed)
+sudo usermod -aG input <your-user-name>
 ```
 
 ---
