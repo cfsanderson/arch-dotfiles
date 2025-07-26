@@ -21,91 +21,60 @@ This guide is a complete, end-to-end process, starting from a blank machine.
 
 ### Phase 0: Preparation
 
-1.  **Download the Arch ISO:** Get the latest official image from the [Arch Linux download page](https://archlinux.org/download/).
-2.  **Create a Bootable USB:** Use a tool like [Balena Etcher](https://www.balena.io/etcher/) or `dd` to flash the ISO to a USB drive.
-3.  **Boot from USB:** Start the computer from the USB drive. You will land at a command-line prompt.
-4.  **Connect to the Internet:** The live environment needs an internet connection to run the installer.
+1.  **Download Arch ISO:** Get the latest official image from the [Arch Linux download page](https://archlinux.org/download/).
+2.  **Create Bootable USB:** Use a tool like [Balena Etcher](https://www.balena.io/etcher/) to flash the ISO to a USB drive.
+3.  **Boot from USB:** Start the computer from the USB drive.
+4.  **Connect to Internet:**
     *   **Ethernet:** Plug in the cable. It should connect automatically.
     *   **Wi-Fi:** Run `iwctl`, then `station wlan0 scan`, then `station wlan0 connect "Your-WiFi-Name"`.
 
 ---
 
-### Phase 1: The `archinstall` Script
+### Phase 1: Guided Arch Installation
 
-Use the official `archinstall` script to perform a guided, reliable installation.
+Use the official `archinstall` script for a reliable base system.
 
-1.  **Launch the Installer:** At the command prompt, simply type:
-    ```bash
-    archinstall
-    ```
-2.  **Follow the Menu:** Navigate the menu using the arrow keys and `Enter`. Configure the following options as specified. Most other options can be left at their default values.
-
-    *   **`Disk configuration`**:
-        *   Select the main drive for your installation.
-        *   Choose the option to **"Wipe the selected drive and use a best-effort default partition layout."**
-        *   For `Filesystem`, select **`btrfs`**.
-        *   When asked `Would you like to use disk encryption?`, choose **Yes**. Enter a strong password you will not forget.
-
-    *   **`Profile`**:
-        *   `Type`: Select **`Desktop`**.
-        *   `Desktop Environment`: Select **`Hyprland`**.
-        *   `Graphics Driver`: Select the appropriate driver (**`Intel`** for 2015 MacBook Pro).
-
-    *   **`User account` -> `Add a user`**:
-        *   Enter your desired username (e.g., `darthvader`).
-        *   Enter and confirm your password.
-        *   When asked `Should darthvader be a superuser (sudo)?`, choose **Yes**.
-
-    *   **`Additional packages`**:
-        *   This is an important step. Enter a space-separated list of the essential tools needed to bootstrap your dotfiles. A good list is:
-        ```
-        git stow neovim
-        ```
-
-    *   **`Network configuration`**:
-        *   Choose **`Copy ISO network configuration to installation`**. This is the easiest option to ensure you have internet on your first real boot.
-
-3.  **Install:**
-    *   Select the **`Install`** option from the main menu.
-    *   Confirm you are ready. The script will now partition the drive, install Arch Linux, and configure the base system.
-    *   When it's finished, it will ask if you want to `chroot` into the new installation. Choose **No**.
-    *   Finally, type `reboot` at the prompt and remove the USB drive.
+1.  **Launch Installer:** At the prompt, type: `archinstall`
+2.  **Configure the following options:**
+    *   **Disk configuration**: Select the main drive, choose "Wipe the selected drive...", and set the filesystem to **`btrfs`**. Encrypt the disk when prompted.
+    *   **Profile**: `Type`: **`Desktop`** -> `Desktop Environment`: **`Hyprland`** -> `Graphics Driver`: **`Intel`**.
+    *   **User account**: Add your superuser account (`<your-user-name>`).
+    *   **Additional packages**: Add `git stow neovim`.
+    *   **Network configuration**: Choose `Copy ISO network configuration to installation`.
+3.  **Install:** Select `Install` from the main menu and wait for it to complete. When asked to `chroot`, select **No**.
+4.  **Reboot:** Type `reboot` and remove the USB drive.
 
 ---
 
 ### Phase 2: First Boot & AUR Helper Setup
 
-After rebooting, you will be in a minimal Hyprland session. The first task is to install `yay`, the AUR helper.
+After rebooting, you will be in a minimal Hyprland session.
 
 1.  **Open a Terminal:** Press `SUPER + Return`.
 2.  **Install `yay`:**
     ```bash
-    # Install the necessary tools to build packages
+    # Install build tools
     sudo pacman -S --needed base-devel
 
-    # Clone the yay repository
+    # Clone, build, and install yay
     git clone https://aur.archlinux.org/yay-bin.git
-    
-    # Enter the directory and build/install it
     cd yay-bin
     makepkg -si
     ```
-    *Why `yay-bin`? It uses a pre-compiled binary, making the first AUR installation much faster.*
 
 ---
 
-### Phase 3: Deploy Your Custom Environment
+### Phase 3: Deploy Custom Environment
 
-This is where the dotfiles repository takes over.
+This is where this dotfiles repository takes over.
 
-1.  **Clone Arch-Dotfiles Repository:**
+1.  **Clone Your Dotfiles Repository (with Submodules):**
     ```bash
     git clone --recurse-submodules https://github.com/cfsanderson/arch-dotfiles.git ~/Projects/arch-dotfiles
     ```
-    The `--recurse-submodules` flag is important as my fork of Kickstart.nvim is included and managed via stow.
 
 2.  **Run the Automated Install Script:**
-    This script will install all your packages from your lists and stow all your dotfiles.
+    This script will install all packages and stow all dotfiles.
     ```bash
     cd ~/Projects/arch-dotfiles
     ./install.sh
@@ -115,14 +84,20 @@ This is where the dotfiles repository takes over.
 
 ### Phase 4: Manual System Configuration (CRITICAL)
 
-The following steps require `sudo` and modify system files in `/etc`. They must be done manually after the main install script.
+**The following steps are specific to my current system (2015 15" MacBook Pro) so you may want to do your own troubleshooting at this point before running all of these commands.** 
 
-**a) Fix Wi-Fi Backend (Use `iwd`):**
+These commands require `sudo` and modify system files in `/etc`. They must be done manually after the main install script has completed.
+
+**a) Copy System-Level Configurations from Repo:**
+This command copies your captured `zram` configuration into the live system directory.
 ```bash
-# Install required firmware
-sudo pacman -S linux-firmware-broadcom
+sudo cp -r ~/Projects/arch-dotfiles/etc/* /etc/
+```
 
-# Create the config file to tell NetworkManager to use iwd
+**b) Fix Wi-Fi Backend (Configure `iwd`):**
+This configures NetworkManager to use the modern and reliable `iwd` backend.
+```bash
+# Create the config file
 sudo nvim /etc/NetworkManager/conf.d/wifi_backend.conf
 ```
 *Paste the following into the file:*
@@ -130,24 +105,28 @@ sudo nvim /etc/NetworkManager/conf.d/wifi_backend.conf
 [device]
 wifi.backend=iwd
 ```
-*Enable the service:*
+*Then, enable the `iwd` service:*
 ```bash
 sudo systemctl enable --now iwd.service
 ```
 
-**b) Fix Thunderbolt Ethernet Driver (Pre-load `tg3`):**
+**c) Fix Thunderbolt Ethernet Driver (Pre-load `tg3`):**
+This ensures the driver for the Thunderbolt Ethernet adapter is loaded at boot, fixing hot-plug issues.
 ```bash
 # Edit the mkinitcpio config
 sudo nvim /etc/mkinitcpio.conf
 ```
-*Find the `MODULES=` line and add `tg3` to it. For example:*
-`MODULES=(btrfs tg3)`
+*Find the `MODULES=` line and add `tg3` to it. It must include `btrfs` as well.*
+**Example:** `MODULES=(btrfs tg3)`
 
-**c) Fix Keyboard Backlight Permissions:**
+**d) Fix Keyboard Backlight Permissions:**
+This allows your user to control the keyboard backlight without `sudo`.
 ```bash
-# Add your user to the 'input' group to allow brightnessctl to work
+# Add your user to the 'input' group (replace 'caleb' if needed)
 sudo usermod -aG input caleb
 ```
+
+---
 
 ### Phase 5: Finalize and Reboot
 
@@ -160,5 +139,6 @@ sudo usermod -aG input caleb
     sudo shutdown -r now
     ```
 
-After this final reboot, the system should be ready to roll, a personalized, minimal, stable, and fully-configured Arch + Hyprland desktop environment.
+After this final reboot, the system should be ready to roll - a pre-rolled, personalized, minimal, stable, and fully-configured Arch + Hyprland desktop environment.
 
+Connect to Wi-Fi for the first time using `nmtui`.
