@@ -162,6 +162,6 @@ After this final reboot, the system should be ready to roll - a pre-rolled, pers
 
 ### Post install:
 - Connect to Wi-Fi for the first time using `nmtui`.
-- Open Neovim for the first time (`nvim`) and the `lazy.nvim` plugin manager will automatically install all your configured plugins. You may want to close and restart to see all the changes. Checkout [this video](https://youtu.be/m8C0Cq9Uv9o?si=T4lvWKUjSLpFy-pZ) on getting started with it.
-- The install script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you envitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
+- Open Neovim for the first time (`nv` alias or standard `nvim`) and the `lazy.nvim` plugin manager will automatically install all the required plugins. You will want to close and restart to see all the changes. Check out [this video](https://youtu.be/m8C0Cq9Uv9o?si=T4lvWKUjSLpFy-pZ) on getting started with it.
+- The `install.sh` script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you envitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
 	- `alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'`
