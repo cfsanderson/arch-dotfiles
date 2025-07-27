@@ -9,7 +9,6 @@
 #                               @cfsanderson
 
 # General
-alias archnotes='cd $HOME/Dropbox/arch-notes/ && nvim .'
 alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'
 alias c='clear'
 alias dots='cd $HOME/Projects/arch-dotfiles/' 
@@ -45,7 +44,6 @@ alias ytm='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0'
 
 # Configs
 alias conf='/usr/bin/git --git-dir=$HOME/.cfs-dotfiles/ --work-tree=$HOME'
-alias confalacritty='cd $HOME/Projects/arch-dotfiles/alacritty/.config/alacritty/ && nvim .'
 alias confalias='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/ && nvim aliases.zsh'
 alias confghostty='cd $HOME/Projects/arch-dotfiles/ghostty/.config/ghostty/ && nvim config'
 alias confhypr='cd $HOME/Projects/arch-dotfiles/hyprland/.config/hypr/ && nvim .'

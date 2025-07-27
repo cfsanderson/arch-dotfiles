@@ -1,13 +1,12 @@
 # "I use Arch now (by the way)..."
 
-
 At the beginning of this year, I tried [Omakub](https://omakub.org/) and when that was too opinionated, I even tried ricing my own custom [Hyprland](https://hypr.land/) setup but got bogged down and retreated back to [Pop!_OS (Cosmic)](https://system76.com/cosmic/). When I heard about DHH's **[Omarchy](https://github.com/basecamp/omarchy)** project, I knew I had to give it a try. This configuration is heavily inspired by the principles of digital sovereignty and self-reliance championed by DHH and the Linux crowd, but I also see it as a design exercise. As a product designer, I'm constantly working within fairly narrow product constraints. What could be more liberating than building your own, bespoke digital environment??! I'm mostly just having fun on an old 2015 Macbook Pro, trying to own my own setup and understand how it works.
 
 This repository will serve both as my personal dotfiles and a self-contained toolkit for bootstrapping a new machine from a minimal Arch install to a fully configured Hyprland desktop based on Omarchy. While Omarchy was a great gateway drug for Arch, I immediately set about customizing to my tastes - removing/replacing apps, refining with my personal theme, etc. - so much so that it just made sense to "start fresh". Here are some highlights:
 
-## What's Inside:
+## What's Inside: Core Components
 
-### Core Components kept from Omarchy
+### Kept from Omarchy
 *   **Window Manager:** [Hyprland](https://hypr.land/)
 *   **Launcher:** [Wofi](https://github.com/SimplyCEO/wofi)
 *   **Bar:** [Waybar](https://github.com/Alexays/Waybar)
@@ -26,11 +25,11 @@ This repository will serve both as my personal dotfiles and a self-contained too
 
 Phases 0-3 should be hardware agnostic while Phase 4 is more specific to issues that I ran into while setting this up on my 2015 MacBook Pro.
 
-## ⚡ Fresh Installation Workflow
+## Fresh Installation Workflow
 
 This guide is a complete, end-to-end process, starting from a blank machine.
 
-### Phase 0: Preparation
+### Phase 0: Preparation {#phase0}
 
 1.  **Download Arch ISO:** Get the latest official image from the [Arch Linux download page](https://archlinux.org/download/).
 2.  **Create Bootable USB:** Use a tool like [Balena Etcher](https://www.balena.io/etcher/) to flash the ISO to a USB drive.
@@ -41,7 +40,7 @@ This guide is a complete, end-to-end process, starting from a blank machine.
 
 ---
 
-### Phase 1: Guided Arch Installation
+### Phase 1: Guided Arch Installation {#phase1}
 
 Use the official `archinstall` script for a reliable base system.
 
@@ -57,7 +56,7 @@ Use the official `archinstall` script for a reliable base system.
 
 ---
 
-### Phase 2: First Boot & AUR Helper Setup
+### Phase 2: First Boot & AUR Helper Setup {#phase2}
 
 After rebooting, you will be in a minimal Hyprland session.
 
@@ -75,7 +74,7 @@ After rebooting, you will be in a minimal Hyprland session.
 
 ---
 
-### Phase 3: Deploy Custom Environment
+### Phase 3: Deploy Custom Environment {#phase3}
 
 1. **Create the Monitor Configuration:**
     Before stowing, you must create a machine-specific monitor configuration. Hyprland will not start without it. Create the file:
@@ -100,7 +99,7 @@ This is where this dotfiles repository takes over.
 
 ---
 
-### Phase 4: Manual System Configuration (CRITICAL)
+### Phase 4: Manual System Configuration (CRITICAL) {#phase4}
 
 **The following steps are specific to my current system (2015 15" MacBook Pro) so you may want to do your own troubleshooting at this point before running all of these commands.** 
 
@@ -146,7 +145,7 @@ sudo usermod -aG input <your-user-name>
 
 ---
 
-### Phase 5: Finalize and Reboot
+### Phase 5: Finalize and Reboot {#phase5}
 
 1.  **Rebuild the Boot Environment:** This applies your `mkinitcpio.conf` changes.
     ```bash
@@ -163,4 +162,6 @@ After this final reboot, the system should be ready to roll - a pre-rolled, pers
 
 ### Post install:
 - Connect to Wi-Fi for the first time using `nmtui`.
-- Open Neovim for the first time (`nvim`) and the `lazy.nvim` plugin manager will automatically install all your configured plugins. You may want to close and restart to see all the changes. See this 
+- Open Neovim for the first time (`nvim`) and the `lazy.nvim` plugin manager will automatically install all your configured plugins. You may want to close and restart to see all the changes. Checkout [this video](https://youtu.be/m8C0Cq9Uv9o?si=T4lvWKUjSLpFy-pZ) on getting started with it.
+- The install script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you envitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
+	- `alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'`
