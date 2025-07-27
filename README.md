@@ -1,17 +1,28 @@
 # "I use Arch now (by the way)..."
 
+
 At the beginning of this year, I tried [Omakub](https://omakub.org/) and when that was too opinionated, I even tried ricing my own custom [Hyprland](https://hypr.land/) setup but got bogged down and retreated back to [Pop!_OS (Cosmic)](https://system76.com/cosmic/). When I heard about DHH's **[Omarchy](https://github.com/basecamp/omarchy)** project, I knew I had to give it a try. This configuration is heavily inspired by the principles of digital sovereignty and self-reliance championed by DHH and the Linux crowd, but I also see it as a design exercise. As a product designer, I'm constantly working within fairly narrow product constraints. What could be more liberating than building your own, bespoke digital environment??! I'm mostly just having fun on an old 2015 Macbook Pro, trying to own my own setup and understand how it works.
 
-This repository will serve both as my personal dotfiles and a self-contained toolkit for bootstrapping a new machine from a minimal Arch install to a fully configured Hyprland desktop based on Omarchy. While Omarchy was a great gateway drug for Arch, I immediately set about customizing to my tastes - removing/replacing apps, refining with my personal theme, etc. - so much that it just made sense to "start fresh". Here are some highlights:
+This repository will serve both as my personal dotfiles and a self-contained toolkit for bootstrapping a new machine from a minimal Arch install to a fully configured Hyprland desktop based on Omarchy. While Omarchy was a great gateway drug for Arch, I immediately set about customizing to my tastes - removing/replacing apps, refining with my personal theme, etc. - so much so that it just made sense to "start fresh". Here are some highlights:
 
-- Using my fork of [Kickstart.nvim](https://github.com/cfsanderson/kickstart-cfs.nvim) for Neovim config instead of Lazy.vim
-- Using my fork of [Sainnhe's Gruvbox Material](https://github.com/cfsanderson/cfs-gruvbox-material) for theming - no theme switching options like Omarchy.
-- [Ghostty](https://ghostty.org/) terminal instead of [Alacritty](https://alacritty.org/)
-- [Brave](https://brave.com/) browser instead of Chromium
-- swapped caps lock and escape keys
-- changed out or removed several web apps (ongoing process)
+## What's Inside:
 
-This configuration is managed by **GNU `stow`** and a declarative package list, creating a reproducible and version-controlled environment. Each application's configuration is a self-contained `stow` package.
+### Core Components kept from Omarchy
+*   **Window Manager:** [Hyprland](https://hypr.land/)
+*   **Launcher:** [Wofi](https://github.com/SimplyCEO/wofi)
+*   **Bar:** [Waybar](https://github.com/Alexays/Waybar)
+
+### Changed from Omarchy
+*   **Shell:** [Zsh](https://zsh.sourceforge.io/) & [Oh My Zsh](https://ohmyz.sh/) instead of Bash.
+*   **Terminal:** [Ghostty](https://ghostty.org/) instead of [Alacritty](https://alacritty.org/)
+*   **Browser:** [Brave](https://brave.com/) instead of Chromium
+*   **Neovim config**: My fork of [Kickstart.nvim](https://github.com/cfsanderson/kickstart-cfs.nvim) for Neovim config instead of Lazy.vim
+
+### Added
+*   **Install Script:** This script uses a declarative package list and should make setting up a new system much easier.
+*   **Dotfile Management:** [GNU Stow](https://www.gnu.org/software/stow/)
+*   **Color Scheme:** My fork of [Sainnhe's Gruvbox Material](https://github.com/cfsanderson/cfs-gruvbox-material) for theming.
+	* Which means there is no fancy theme switching options like Omarchy but the configs for theming are more transparent, and easily configurable (feature, not a bug IMO)
 
 Phases 0-3 should be hardware agnostic while Phase 4 is more specific to issues that I ran into while setting this up on my 2015 MacBook Pro.
 
@@ -148,4 +159,8 @@ sudo usermod -aG input <your-user-name>
 
 After this final reboot, the system should be ready to roll - a pre-rolled, personalized, minimal, stable, and fully-configured Arch + Hyprland desktop environment.
 
-Connect to Wi-Fi for the first time using `nmtui`.
+-----
+
+### Post install:
+- Connect to Wi-Fi for the first time using `nmtui`.
+- Open Neovim for the first time (`nvim`) and the `lazy.nvim` plugin manager will automatically install all your configured plugins. You may want to close and restart to see all the changes. See this 
