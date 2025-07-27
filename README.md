@@ -29,7 +29,7 @@ Phases 0-3 should be hardware agnostic while Phase 4 is more specific to issues 
 
 This guide is a complete, end-to-end process, starting from a blank machine.
 
-### Phase 0: Preparation {#phase0}
+### Phase 0: Preparation
 
 1.  **Download Arch ISO:** Get the latest official image from the [Arch Linux download page](https://archlinux.org/download/).
 2.  **Create Bootable USB:** Use a tool like [Balena Etcher](https://www.balena.io/etcher/) to flash the ISO to a USB drive.
@@ -40,7 +40,7 @@ This guide is a complete, end-to-end process, starting from a blank machine.
 
 ---
 
-### Phase 1: Guided Arch Installation {#phase1}
+### Phase 1: Guided Arch Installation
 
 Use the official `archinstall` script for a reliable base system.
 
@@ -56,7 +56,7 @@ Use the official `archinstall` script for a reliable base system.
 
 ---
 
-### Phase 2: First Boot & AUR Helper Setup {#phase2}
+### Phase 2: First Boot & AUR Helper Setup
 
 After rebooting, you will be in a minimal Hyprland session.
 
@@ -74,7 +74,7 @@ After rebooting, you will be in a minimal Hyprland session.
 
 ---
 
-### Phase 3: Deploy Custom Environment {#phase3}
+### Phase 3: Deploy Custom Environment
 
 1. **Create the Monitor Configuration:**
     Before stowing, you must create a machine-specific monitor configuration. Hyprland will not start without it. Create the file:
@@ -99,7 +99,7 @@ This is where this dotfiles repository takes over.
 
 ---
 
-### Phase 4: Manual System Configuration (CRITICAL) {#phase4}
+### Phase 4: Manual System Configuration (CRITICAL)
 
 **The following steps are specific to my current system (2015 15" MacBook Pro) so you may want to do your own troubleshooting at this point before running all of these commands.** 
 
@@ -145,7 +145,7 @@ sudo usermod -aG input <your-user-name>
 
 ---
 
-### Phase 5: Finalize and Reboot {#phase5}
+### Phase 5: Finalize and Reboot
 
 1.  **Rebuild the Boot Environment:** This applies your `mkinitcpio.conf` changes.
     ```bash
