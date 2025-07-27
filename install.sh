@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Arch Linux Bootstrap Script
-# This script installs all packages, plugins, and dotfiles.
+# This script installs all packages, plugins, and dotfiles (https://github.com/cfsanderson/arch-dotfiles/)
 #
 
 # Exit immediately if a command exits with a non-zero status.
