@@ -48,12 +48,8 @@ COMPLETION_WAITING_DOTS="true"
 # SSH key path
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
-# asdf version manager
-if [ -d "$HOME/.asdf" ]; then
-    . "$HOME/.asdf/asdf.sh"
-    # Add completions to fpath before compinit
-    fpath=(${ASDF_DIR}/completions $fpath)
-fi
+# asdf version manager (system installation)
+# asdf is installed system-wide via pacman
 
 fastfetch
 # FZF
