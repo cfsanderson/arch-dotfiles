@@ -11,4 +11,5 @@ typora 1.10.8-1
 windsurf 1.11.1-1
 yay-bin 12.5.0-1
 yay-bin-debug 12.5.0-1
+zen-browser-bin 1.14.9b-1
 zoom 6.5.3-1
