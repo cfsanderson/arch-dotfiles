@@ -1,13 +1,13 @@
-1password-beta 8.11.2_18.BETA-18
+1password-beta 8.11.4_21.BETA-21
 1password-cli 2.31.1-1
-brave-bin 1:1.80.122-1
+brave-bin 1:1.80.124-1
 clipse 1.1.0-1
 dropbox-cli 2024.04.17-2
 lazydocker 0.24.1-1
 pinta 3.0.2-1
 rmpc-git 0.9.0.r29.gf0c0a1e-1
 typora 1.10.8-1
-windsurf 1.11.0-1
+windsurf 1.11.1-1
 yay-bin 12.5.0-1
 yay-bin-debug 12.5.0-1
 zoom 6.5.3-1
