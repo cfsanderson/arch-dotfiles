@@ -28,6 +28,7 @@ alias pbpaste='wl-paste'
 alias sourz='source $HOME/.config/zsh/.zshrc'
 alias st='speedtest'
 alias stowr='cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */'
+alias stravapi='ssh caleb@192.168.1.192'
 alias to=touch_open
 touch_open() {
 	if ! [ "$1" ]; then
