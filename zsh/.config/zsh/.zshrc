@@ -9,6 +9,7 @@
 #                               @cfsanderson
 
 # --- Oh My Zsh Configuration ---
+# Aliases moved to ~/.oh-my-zsh/custom/aliases.zsh and accessible with "confalias" alias.
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
 
 ZSH_THEME="agnoster"
@@ -27,9 +28,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # --- End Oh My Zsh ---
 
-# Aliases moved to ~/.oh-my-zsh/custom/aliases.zsh and accessible with "confalias" alias.
-
-# export TMUX_CONF=~/.config/tmux/tmux.conf
+source ~/.config/zsh/.env.local
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
