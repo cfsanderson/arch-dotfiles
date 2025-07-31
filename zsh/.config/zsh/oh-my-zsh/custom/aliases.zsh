@@ -25,7 +25,7 @@ mkdir_cd() {
 alias nv='nvim'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
-alias sourz='source $HOME/.config/zsh/.zshrc'
+alias sourz='source $HOME/Projects/arch-dotfiles/zsh/.config/zsh/.zshrc'
 alias st='speedtest'
 alias stowr='cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */'
 ## removed sensitive alias
@@ -50,4 +50,4 @@ alias confghostty='cd $HOME/Projects/arch-dotfiles/ghostty/.config/ghostty/ && n
 alias confhypr='cd $HOME/Projects/arch-dotfiles/hyprland/.config/hypr/ && nvim .'
 alias conftmux='cd $HOME/Projects/arch-dotfiles/tmux/.config/tmux/ && nvim .'
 alias confnv='cd $HOME/Projects/arch-dotfiles/nvim/.config/nvim/ && nvim init.lua'
-alias confzsh='cd $HOME/.config/zsh/ && nvim .zshrc'
+alias confzsh='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/ && nvim .zshrc'

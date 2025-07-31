@@ -48,6 +48,9 @@ COMPLETION_WAITING_DOTS="true"
 # SSH key path
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+# start gnome keyring
+export $(gnome-keyring-daemon --start --components=secrets 2>/dev/null)
+
 # asdf version manager (system installation)
 # asdf is installed system-wide via pacman
 
