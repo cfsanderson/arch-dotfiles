@@ -42,3 +42,4 @@ cursor-text = #121212
 
 selection-background = #DCC6A3
 selection-foreground = #121212
+keybind = shift+enter=text:\n
