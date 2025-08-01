@@ -87,6 +87,16 @@ When modifying this dotfiles setup:
 3. Update package lists when adding new software: `archpack`
 4. The Neovim config includes a CLAUDE.md specific to that configuration
 
+## Session History Tracking
+
+**IMPORTANT**: Claude Code should maintain `CLAUDE_history.md` to track significant changes and conclusions from each session. This file is git-ignored and should be updated whenever:
+- Significant changes are made to the dotfiles configuration
+- New features or workflows are implemented
+- Issues are resolved or configurations are fixed
+- Sessions reach important conclusions or milestones
+
+This helps maintain continuity between sessions and provides a record of what has been accomplished.
+
 ## Notes
 
 - This setup is hardware-specific to a 2015 MacBook Pro but Phases 0-3 of installation should be hardware agnostic
