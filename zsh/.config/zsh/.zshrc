@@ -51,6 +51,14 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # start gnome keyring
 export $(gnome-keyring-daemon --start --components=secrets 2>/dev/null)
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 # asdf version manager (system installation)
 # asdf is installed system-wide via pacman
 
