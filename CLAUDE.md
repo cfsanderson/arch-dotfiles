@@ -89,7 +89,7 @@ When modifying this dotfiles setup:
 
 ## Session History Tracking
 
-**IMPORTANT**: Claude Code should maintain `CLAUDE_history.md` to track significant changes and conclusions from each session. This file is git-ignored and should be updated whenever:
+**IMPORTANT**: Claude Code should maintain `CLAUDE.local.md` to track significant changes and conclusions from each session. This file is git-ignored and should be updated whenever:
 - Significant changes are made to the dotfiles configuration
 - New features or workflows are implemented
 - Issues are resolved or configurations are fixed
