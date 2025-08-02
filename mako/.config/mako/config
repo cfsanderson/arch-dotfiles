@@ -1,0 +1,27 @@
+# Mako notification daemon configuration
+# Styled to match waybar theme
+
+# Appearance
+font=CaskaydiaMono Nerd Font 12
+background-color=#282828
+text-color=#d4be98
+border-color=#d4be98
+border-size=1
+border-radius=0
+
+# Layout
+width=300
+height=110
+margin=10
+padding=10
+
+# Behavior
+default-timeout=5000
+ignore-timeout=1
+
+# Icons
+icon-path=/usr/share/icons/Adwaita
+max-icon-size=48
+
+# Grouping
+group-by=app-name
