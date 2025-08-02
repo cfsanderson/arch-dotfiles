@@ -44,6 +44,7 @@ suppress_preload = false
 
 [plugin]
 
+
 prepend_keymap = [
 	{ on = ["g", "h"], run = "cd ~", desc = "Go to the home directory" },
 	{ on = ["g", "c"], run = "cd ~/.config", desc = "Go to the config directory" },

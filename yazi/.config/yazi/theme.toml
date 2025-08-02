@@ -1,119 +1,73 @@
-# Gruvbox Material theme for yazi to match dotfiles theme
+[flavor]
+dark = "gruvbox-dark"
 
+# Override gruvbox-dark colors with Gruvbox Material colors
 [mgr]
-cwd = { fg = "#d4be98" }
+# Use Material yellow for directories
+cwd = { fg = "#d8a657" }
 
-# Hovered
-hovered         = { fg = "#282828", bg = "#d4be98" }
-preview_hovered = { underline = true }
-
-# Find
-find_keyword  = { fg = "#7daea3", italic = true }
+# Find with Material colors
+find_keyword = { fg = "#7daea3", italic = true }
 find_position = { fg = "#ea6962", bg = "reset", italic = true }
 
-# Marker
-marker_selected = { fg = "#a9b665", bg = "#a9b665" }
-marker_copied   = { fg = "#d8a657", bg = "#d8a657" }
-marker_cut      = { fg = "#ea6962", bg = "#ea6962" }
-
-# Tab
-tab_active   = { fg = "#282828", bg = "#d4be98" }
-tab_inactive = { fg = "#d4be98", bg = "#45403d" }
-tab_width    = 1
-
-# Border
-border_symbol = "│"
-border_style  = { fg = "#665c54" }
-
-# Highlighting
-syntect_theme = ""
+# Markers with Material colors
+marker_selected = { fg = "#d4be98", bg = "#d4be98" }
+marker_copied = { fg = "#d8a657", bg = "#d8a657" }
+marker_cut = { fg = "#ea6962", bg = "#ea6962" }
+marker_marked = { fg = "#7daea3", bg = "#7daea3" }
 
 [status]
-separator_open  = ""
-separator_close = ""
-separator_style = { fg = "#3c3836", bg = "#3c3836" }
+# Progress with Material colors
+progress_label = { fg = "#d4be98", bold = true }
+progress_error = { fg = "#ea6962", bg = "#3c3836" }
 
-# Mode (Agnoster-style with arrow separators)
-mode_normal = { fg = "#ffffff", bg = "#458588", bold = true }
-mode_select = { fg = "#282828", bg = "#b8bb26", bold = true }
-mode_unset  = { fg = "#ffffff", bg = "#cc241d", bold = true }
+# Permissions with Material colors
+perm_read = { fg = "#a9b665" }
+perm_write = { fg = "#ea6962" }
+perm_exec = { fg = "#a9b665" }
 
-# Progress (Agnoster-style progress bar)
-progress_label  = { fg = "#ffffff", bg = "#458588", bold = true }
-progress_normal = { fg = "#458588", bg = "#3c3836" }
-progress_error  = { fg = "#cc241d", bg = "#3c3836" }
+[pick]
+# Select with Material colors
+border = { fg = "#7daea3" }
+active = { fg = "#ea6962", bold = true }
 
-# Permissions
-permissions_t = { fg = "#a9b665" }
-permissions_r = { fg = "#d8a657" }
-permissions_w = { fg = "#ea6962" }
-permissions_x = { fg = "#7daea3" }
-permissions_s = { fg = "#d3869b" }
-
-[select]
-border   = { fg = "#7daea3" }
-active   = { fg = "#ea6962" }
-inactive = { fg = "#d4be98" }
-
-# Input
 [input]
-border   = { fg = "#7daea3" }
-title    = { fg = "#d4be98" }
-value    = { fg = "#d4be98" }
-selected = { reversed = true }
+# Input with Material colors
+border = { fg = "#7daea3" }
 
-# Completion
 [completion]
-border   = { fg = "#7daea3" }
-active   = { fg = "#282828", bg = "#d4be98" }
-inactive = { fg = "#d4be98" }
+# Completion with Material colors
+border = { fg = "#7daea3" }
 
-# Tasks
 [tasks]
-border  = { fg = "#7daea3" }
-title   = { fg = "#d4be98" }
-hovered = { underline = true }
+# Tasks with Material colors
+border = { fg = "#7daea3" }
 
-# Which
 [which]
-mask            = { bg = "#1d2021" }
-cand            = { fg = "#7daea3" }
-rest            = { fg = "#928374" }
-desc            = { fg = "#ea6962" }
-separator       = "  "
-separator_style = { fg = "#665c54" }
+# Which with Material colors
+cand = { fg = "#7daea3" }
+desc = { fg = "#ea6962" }
 
-# Help
 [help]
-on      = { fg = "#ea6962" }
-exec    = { fg = "#7daea3" }
-desc    = { fg = "#d4be98" }
-hovered = { bg = "#45403d", bold = true }
-footer  = { fg = "#d4be98", bg = "#45403d" }
+# Help with Material colors
+on = { fg = "#ea6962" }
+run = { fg = "#7daea3" }
+
+[notify]
+# Notifications with Material colors
+title_error = { fg = "#ea6962" }
 
 [filetype]
-
+# File types with Material colors
 rules = [
-	# Images
-	{ mime = "image/*", fg = "#d3869b" },
-	
-	# Videos
-	{ mime = "video/*", fg = "#d8a657" },
-	{ mime = "audio/*", fg = "#d8a657" },
-	
-	# Archives
-	{ mime = "application/zip",             fg = "#ea6962" },
-	{ mime = "application/gzip",            fg = "#ea6962" },
-	{ mime = "application/x-tar",           fg = "#ea6962" },
-	{ mime = "application/x-bzip",          fg = "#ea6962" },
-	{ mime = "application/x-bzip2",         fg = "#ea6962" },
-	{ mime = "application/x-7z-compressed", fg = "#ea6962" },
-	{ mime = "application/x-rar",           fg = "#ea6962" },
-	
-	# Documents
-	{ mime = "application/pdf", fg = "#e78a4e" },
-	
-	# Fallback
+	# Media with Material yellow
+	{ mime = "{audio,video}/*", fg = "#d8a657" },
+
+	# Archives with Material red
+	{ mime = "application/*zip", fg = "#ea6962" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ea6962" },
+
+	# Fallback with Material colors
 	{ name = "*", fg = "#d4be98" },
-	{ name = "*/", fg = "#7daea3" }
+	{ name = "*/", fg = "#d8a657" },
 ]
