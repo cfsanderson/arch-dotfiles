@@ -1,5 +1,5 @@
 /* Wofi-specific color definitions using GTK @define-color syntax
- * Maps our master gruvbox-material palette to wofi's expected color names
+ * Maps the master gruvbox-material palette to wofi's expected color names
  * Import this file in wofi CSS to use standardized theme colors
  */
 
@@ -12,7 +12,7 @@
 /* Extended colors (available for advanced wofi theming) */
 @define-color bg-secondary #282828;  /* --bg1: secondary backgrounds */
 @define-color bg-interactive #3c3836;  /* --bg3: interactive elements */
-@define-color bg-hover    #504945;  /* --bg5: hover states */
+@define-color bg-hover    #141617;  /* --bg5: hover states */
 
 @define-color text-secondary #ddc7a1;  /* --fg1: secondary text */
 @define-color text-muted  #928374;  /* --grey1: muted text */
