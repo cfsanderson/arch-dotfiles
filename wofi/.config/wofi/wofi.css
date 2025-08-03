@@ -6,7 +6,10 @@
 }
 
 window {
-  margin: 0px;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
   padding: 20px;
   background-color: @base;
   opacity: 0.95;
@@ -55,9 +58,12 @@ window {
 
 #entry {
   background-color: @base;
+  opacity: 0.6;
 }
 
 #entry:selected {
+  background-color: @bg-hover;
+  opacity: 1.0;
   outline: none;
   border: none;
 }
