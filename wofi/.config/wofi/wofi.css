@@ -1,7 +1,4 @@
-@define-color	selected-text  #e5dac7;
-@define-color	text  #e5dac7;
-@define-color	base  #1a1919;
-@define-color	border  #928374;
+@import "/home/caleb/Projects/arch-dotfiles/colors/gruvbox-material-wofi.css";
 
 * {
   font-family: 'CaskaydiaMono Nerd Font', monospace;

@@ -175,7 +175,10 @@ After this final reboot, the system should be ready to roll - a pre-rolled, pers
 This setup includes a comprehensive master color palette system for easy customization:
 
 - **Master Palette Files:** Located in `colors/` directory
-  - `gruvbox-material-palette.css` - CSS variables for web-based configs
+  - `gruvbox-material-palette.css` - CSS variables for waybar and web-based configs
+  - `gruvbox-material-wofi.css` - GTK color definitions for wofi
+  - `gruvbox-material-mako.conf` - Color template for mako notifications
+  - `gruvbox-material-palette.toml` - TOML color values for yazi, starship, etc.
   - `gruvbox-material-palette.sh` - Shell variables for scripts and configs
   - `color-preview.html` - Interactive color reference tool
   - `README.md` - Complete documentation and usage examples
@@ -186,6 +189,6 @@ This setup includes a comprehensive master color palette system for easy customi
   3. Restart applications to see changes
   4. All applications automatically inherit the new colors
 
-- **Supported Applications:** Waybar, Wofi, Hyprland, Hyprlock, Mako, and more all use the master palette for perfect consistency
+- **Supported Applications:** Waybar (CSS variables), Wofi (GTK colors), Mako (template), Hyprland, Hyprlock, and more all use the master palette for perfect consistency
 
 See `colors/README.md` for detailed documentation on customizing colors and adding support to new applications.

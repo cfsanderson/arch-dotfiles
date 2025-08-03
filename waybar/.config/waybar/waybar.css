@@ -1,5 +1,7 @@
+@import "/home/caleb/Projects/arch-dotfiles/colors/gruvbox-material-palette.css";
+
 * {
-  color: #ddc7a1;
-  background-color: #1a1919;
+  color: var(--text-secondary);
+  background-color: var(--bg0);
 }
 
