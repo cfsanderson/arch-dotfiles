@@ -2,9 +2,9 @@
 
 So, I use Arch now (by the way)..
 
-At the beginning of this year, I tried [Omakub](https://omakub.org/) and when that was too opinionated, I even tried ricing my own custom [Hyprland](https://hypr.land/) setup but got bogged down and retreated back to [Pop!_OS (Cosmic)](https://system76.com/cosmic/). When I heard about DHH's **[Omarchy](https://github.com/basecamp/omarchy)** project, I knew I had to give it a try. This configuration is heavily inspired by the principles of digital sovereignty and self-reliance championed by DHH and the Linux crowd, but I also see it as a design exercise. As a product designer, I'm constantly working within fairly narrow product constraints. What could be more liberating than building your own, bespoke digital environment??! I'm mostly just having fun on an old 2015 Macbook Pro, trying to own my own setup and understand how it works.
+At the beginning of this year, I tried [Omakub](https://omakub.org/) and when that was too opinionated, I tried ricing my own custom [Hyprland](https://hypr.land/) setup but got bogged down and retreated back to [Pop!_OS (Cosmic)](https://system76.com/cosmic/). When I heard about DHH's **[Omarchy](https://github.com/basecamp/omarchy)** project, I knew I had to give it a try. This configuration is heavily inspired by the principles of digital sovereignty and self-reliance championed by DHH and the Linux crowd, but I also see it as a design exercise. As a product designer, I'm constantly working within fairly narrow product constraints. What could be more liberating than building your own, bespoke digital environment??! I'm mostly just having fun on an old 2015 Macbook Pro, trying to own my own setup and understand how it works.
 
-This repository will serve both as my personal dotfiles and a self-contained toolkit for bootstrapping a new machine from a minimal Arch install to a fully configured Hyprland desktop based on Omarchy. While Omarchy was a great gateway drug for Arch, I immediately set about customizing to my tastes - removing/replacing apps, refining with my personal theme, etc. - so much so that it just made sense to "start fresh". Here are some highlights:
+This repository serves as my personal dotfiles and a self-contained toolkit for bootstrapping a new machine from a minimal Arch install to a fully configured Hyprland desktop based on Omarchy. While Omarchy was a great gateway drug for Arch, I immediately set about customizing to my tastes - removing/replacing apps, refining with my personal theme, etc. - so much so that it just made sense to "start fresh". Here are some highlights:
 
 ## What's Inside: Core Components
 
@@ -16,7 +16,7 @@ This repository will serve both as my personal dotfiles and a self-contained too
 ### Changed from Omarchy
 *   **Shell:** [Zsh](https://zsh.sourceforge.io/) & [Oh My Zsh](https://ohmyz.sh/) instead of Bash.
 *   **Terminal:** [Ghostty](https://ghostty.org/) instead of [Alacritty](https://alacritty.org/)
-*   **Browser:** [Brave](https://brave.com/) instead of Chromium
+*   **Browser:** [Zen Browser](https://zen-browser.app/) instead of Chromium
 *   **Neovim config**: My fork of [Kickstart.nvim](https://github.com/cfsanderson/kickstart-cfs.nvim) for Neovim config instead of Lazy.vim
 
 ### Added
@@ -167,7 +167,7 @@ After this final reboot, the system should be ready to roll - a pre-rolled, pers
 ### Post install:
 - Connect to Wi-Fi for the first time using `nmtui`.
 - Open Neovim for the first time (`nv` alias or standard `nvim`) and the `lazy.nvim` plugin manager will automatically install all the required plugins. You will want to close and restart to see all the changes. Check out [this video](https://youtu.be/m8C0Cq9Uv9o?si=T4lvWKUjSLpFy-pZ) on getting started with it.
-- The `install.sh` script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you envitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
+- The `install.sh` script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you inevitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
 	- `alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'`
 
 ## Customizing Colors and Themes
