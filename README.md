@@ -23,7 +23,9 @@ This repository will serve both as my personal dotfiles and a self-contained too
 *   **Install Script:** This script uses a declarative package list and should make setting up a new system much easier.
 *   **Dotfile Management:** [GNU Stow](https://www.gnu.org/software/stow/)
 *   **Color Scheme:** My fork of [Sainnhe's Gruvbox Material](https://github.com/cfsanderson/cfs-gruvbox-material) for theming.
-	* Which means there is no fancy theme switching options like Omarchy but the configs for theming are more transparent, and easily configurable (feature, not a bug IMO)
+	* Includes a **master color palette system** in `colors/` directory with CSS and shell variables for consistent theming
+	* All applications use exact colors from the Neovim theme for perfect visual consistency
+	* No fancy theme switching options like Omarchy but the configs for theming are more transparent, and easily configurable (feature, not a bug IMO)
 
 Phases 0-3 should be hardware agnostic while Phase 4 is more specific to issues that I ran into while setting this up on my 2015 MacBook Pro.
 
@@ -167,3 +169,23 @@ After this final reboot, the system should be ready to roll - a pre-rolled, pers
 - Open Neovim for the first time (`nv` alias or standard `nvim`) and the `lazy.nvim` plugin manager will automatically install all the required plugins. You will want to close and restart to see all the changes. Check out [this video](https://youtu.be/m8C0Cq9Uv9o?si=T4lvWKUjSLpFy-pZ) on getting started with it.
 - The `install.sh` script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you envitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
 	- `alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'`
+
+## Customizing Colors and Themes
+
+This setup includes a comprehensive master color palette system for easy customization:
+
+- **Master Palette Files:** Located in `colors/` directory
+  - `gruvbox-material-palette.css` - CSS variables for web-based configs
+  - `gruvbox-material-palette.sh` - Shell variables for scripts and configs
+  - `color-preview.html` - Interactive color reference tool
+  - `README.md` - Complete documentation and usage examples
+
+- **Customization Workflow:**
+  1. Modify colors in the master palette files
+  2. Re-stow configs with `stowr` alias
+  3. Restart applications to see changes
+  4. All applications automatically inherit the new colors
+
+- **Supported Applications:** Waybar, Wofi, Hyprland, Hyprlock, Mako, and more all use the master palette for perfect consistency
+
+See `colors/README.md` for detailed documentation on customizing colors and adding support to new applications.
