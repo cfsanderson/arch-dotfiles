@@ -1,5 +1,4 @@
 /* alias waybarreload="pkill -SIGUSR2 waybar" */
-@import "/home/caleb/Projects/arch-dotfiles/colors/gruvbox-material-palette.css";
 
 * {
   border: none;
@@ -17,25 +16,25 @@
   all: initial;
   padding: 2px 6px;
   margin-right: 3px;
-  color: var(--workspace-inactive);
+  color: #504945;
   background-color: transparent;
   border-radius: 3px;
 }
 
 #workspaces button.active {
-  color: var(--workspace-active);
+  color: #e5dac7;
   background-color: transparent;
   /* background-color: var(--bg3); */
 }
 
 #workspaces button.focused {
-  color: var(--workspace-active);
-  background-color: var(--bg3);
+  color: #e5dac7;
+  background-color: #3c3836;
 }
 
 #workspaces button:hover {
-  color: var(--workspace-active);
-  background-color: var(--workspace-hover);
+  color: #e5dac7;
+  background-color: #928374;
 }
 
 #custom-dropbox,
