@@ -1,7 +1,6 @@
 1password-beta 8.11.4_21.BETA-21
 1password-cli 2.31.1-1
 asdf-vm 0.18.0-1
-brave-bin 1:1.80.125-1
 clipse 1.1.0-1
 crush-bin 0.2.1-1
 dropbox-cli 2024.04.17-2
