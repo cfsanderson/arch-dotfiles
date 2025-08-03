@@ -3,7 +3,7 @@
 asdf-vm 0.18.0-1
 brave-bin 1:1.80.125-1
 clipse 1.1.0-1
-crush-bin 0.2.0-1
+crush-bin 0.2.1-1
 dropbox-cli 2024.04.17-2
 lazydocker 0.24.1-1
 pinta 3.0.3-1
