@@ -1,3 +1,4 @@
+/* alias waybarreload="pkill -SIGUSR2 waybar" */
 * {
   border: none;
   border-radius: 0;
@@ -14,6 +15,25 @@
   all: initial;
   padding: 2px 6px;
   margin-right: 3px;
+  color: #665c54;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+#workspaces button.active {
+  color: #d4be98;
+  background-color: transparent;
+  /* background-color: #3c3836; */
+}
+
+#workspaces button.focused {
+  color: #d4be98;
+  background-color: #3c3836;
+}
+
+#workspaces button:hover {
+  color: #d4be98;
+  background-color: #504945;
 }
 
 #custom-dropbox,
