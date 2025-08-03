@@ -23,6 +23,7 @@ mkdir_cd() {
     ls -la
 }
 alias nv='nvim'
+alias open='xdg-open'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias sourz='source $HOME/Projects/arch-dotfiles/zsh/.config/zsh/.zshrc'
@@ -39,6 +40,7 @@ touch_open() {
 }
 # alias tmux='env TERM=screen-256color tmux'
 alias tp='trash-put'
+alias waybarreload='pkill -SIGUSR2 waybar'
 alias wiki='cd $HOME/Projects/wiki && nv index.md'
 alias yt='yt-dlp'
 alias ytm='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0'
