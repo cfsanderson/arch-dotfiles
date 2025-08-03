@@ -4,13 +4,17 @@ This directory contains the master color palette for all dotfiles configurations
 
 ## Files
 
-- **`gruvbox-material-palette.css`** - CSS variables for web-based configs (waybar, wofi, etc.)
-- **`gruvbox-material-palette.sh`** - Shell variables for scripts and non-CSS configs
+- **`gruvbox-material-palette.css`** - CSS variables for web-based configs (waybar, etc.)
+- **`gruvbox-material-palette.sh`** - Shell variables for scripts and configs
+- **`gruvbox-material-wofi.css`** - GTK @define-color variables for wofi
+- **`gruvbox-material-mako.conf`** - Color template for mako notifications
+- **`gruvbox-material-palette.toml`** - TOML color values for yazi, starship, etc.
+- **`color-preview.html`** - Interactive color reference and testing tool
 - **`README.md`** - This documentation file
 
 ## Usage
 
-### CSS Configurations (Waybar, Wofi, etc.)
+### CSS Configurations (Waybar)
 
 Import the CSS palette in your stylesheets:
 
@@ -33,6 +37,26 @@ Import the CSS palette in your stylesheets:
 #workspaces button.active {
     color: var(--workspace-active);
     background-color: var(--bg3);
+}
+```
+
+### GTK Configurations (Wofi)
+
+Import the GTK color definitions:
+
+```css
+@import "/home/caleb/Projects/arch-dotfiles/colors/gruvbox-material-wofi.css";
+
+/* Use GTK @define-color variables */
+window {
+    background-color: @base;
+    color: @text;
+    border: 1px solid @border;
+}
+
+#entry:selected {
+    background-color: @bg-hover;
+    color: @selected-text;
 }
 ```
 
@@ -66,13 +90,25 @@ general {
 
 ### Configuration File Templates
 
-For configs that don't support imports, use the values directly:
+#### Mako Notifications
+Copy colors from the template file:
+```bash
+# Reference: colors/gruvbox-material-mako.conf
+background-color=#1a1919    # --bg0: main background
+text-color=#e5dac7          # --fg0: primary text
+border-color=#928374        # --grey2: emphasized borders
+```
 
-```ini
-# Example mako config
-background-color=#1d2021
-text-color=#d4be98
-border-color=#a89984
+#### TOML Configurations (Yazi, Starship, etc.)
+Reference the TOML palette file:
+```toml
+# From colors/gruvbox-material-palette.toml
+[mgr]
+cwd = { fg = "#d8a657" }    # yellow for current directory
+
+[status] 
+progress_label = { fg = "#e5dac7", bold = true }  # fg0 for progress
+progress_error = { fg = "#ea6962", bg = "#3c3836" }  # red on bg3
 ```
 
 ## Color Categories

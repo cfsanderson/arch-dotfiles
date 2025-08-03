@@ -1,11 +1,12 @@
 # Mako notification daemon configuration
-# Styled to match waybar theme
+# Colors from CFS Gruvbox Material palette 
+# See colors/gruvbox-material-mako.conf for color template
 
 # Appearance
 font=CaskaydiaMono Nerd Font 12
-background-color=#282828
-text-color=#e5dac7
-border-color=#928374
+background-color=#1a1919    # --bg0: main background
+text-color=#e5dac7          # --fg0: primary text
+border-color=#928374        # --grey2: emphasized borders
 border-size=1
 border-radius=0
 
