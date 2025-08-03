@@ -15,24 +15,24 @@
   all: initial;
   padding: 2px 6px;
   margin-right: 3px;
-  color: #665c54;
+  color: #504945;
   background-color: transparent;
   border-radius: 3px;
 }
 
 #workspaces button.active {
-  color: #d4be98;
+  color: #e5dac7;
   background-color: transparent;
   /* background-color: #3c3836; */
 }
 
 #workspaces button.focused {
-  color: #d4be98;
+  color: #e5dac7;
   background-color: #3c3836;
 }
 
 #workspaces button:hover {
-  color: #d4be98;
+  color: #e5dac7;
   background-color: #504945;
 }
 
