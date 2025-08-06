@@ -4,6 +4,36 @@ So, I use Arch now (by the way)..
 
 At the beginning of this year, I tried [Omakub](https://omakub.org/) and when that was too opinionated, I tried ricing my own custom [Hyprland](https://hypr.land/) setup but got bogged down and retreated back to [Pop!_OS (Cosmic)](https://system76.com/cosmic/). When I heard about DHH's **[Omarchy](https://github.com/basecamp/omarchy)** project, I knew I had to give it a try. This configuration is heavily inspired by the principles of digital sovereignty and self-reliance championed by DHH and the Linux crowd, but I also see it as a design exercise. As a product designer, I'm constantly working within fairly narrow product constraints. What could be more liberating than building your own, bespoke digital environment??! I'm mostly just having fun on an old 2015 Macbook Pro, trying to own my own setup and understand how it works.
 
+<details>
+  <summary><b>Screenshots</b> - Click to expand</summary>
+
+  ![Desktop background](screens/2025-08-03-211759_hyprshot.png)
+  *1) Basic desktop with waybar using cfs-gruvbox-material theme*
+
+  ![HTML Theme and Ghostty](screens/2025-08-03-211717_hyprshot.png)
+  *2) Example HTML theme file and Ghostty terminal*
+
+  ![Ghostty with Tmux panes](screens/2025-08-03-211903_hyprshot.png)
+  *3) Ghostty with tmux panes and Fastfetch in theme*
+
+  ![Btop with theme](screens/2025-08-03-211911_hyprshot.png)
+  *4) btop system monitor with matching color scheme*
+
+  ![Neovim with Claude plugin](screens/2025-08-03-211952_hyprshot.png)
+  *5) Neovim with Claude plugin* 
+
+  ![Custom Bat theme](screens/2025-08-03-212003_hyprshot.png)
+  *6) Custom Bat theme*
+
+  ![RMPC](screens/2025-08-03-212012_hyprshot.png)
+  *7) RMPC (need to add some music)*
+
+  ![Claude CLI](screens/2025-08-03-212131_hyprshot.png)
+  *8) Claude CLI*
+
+</details>
+</br>
+
 This repository serves as my personal dotfiles and a self-contained toolkit for bootstrapping a new machine from a minimal Arch install to a fully configured Hyprland desktop based on Omarchy. While Omarchy was a great gateway drug for Arch, I immediately set about customizing to my tastes - removing/replacing apps, refining with my personal theme, etc. - so much so that it just made sense to "start fresh". Here are some highlights:
 
 ## What's Inside: Core Components
