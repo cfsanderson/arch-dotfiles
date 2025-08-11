@@ -48,6 +48,9 @@ COMPLETION_WAITING_DOTS="true"
 # SSH key path
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
+# Cursor CLI
+export PATH="$HOME/.local/bin:$PATH"
+
 # start gnome keyring
 export $(gnome-keyring-daemon --start --components=secrets 2>/dev/null)
 
