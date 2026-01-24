@@ -1,3 +1,20 @@
-zsh/.confg/zsh/oh-my-zsh/
+# Oh My Zsh (installed separately via install script)
+# Only custom/aliases.zsh is tracked from this directory
+zsh/.config/zsh/oh-my-zsh/
+# Exception: force-tracked aliases remain tracked despite parent ignore
+
+# Tmux plugins (managed by TPM)
 tmux/.tmux/
+tmux/.config/tmux/plugins/
+
+# Zsh compiled files
+zsh/.config/zsh/.zcompdump*
+
+# Local environment (secrets)
+zsh/.config/zsh/.env.local
+
+# Editor/tool artifacts
 .crush/
+
+# Local session notes (machine-specific)
+CLAUDE.local.md

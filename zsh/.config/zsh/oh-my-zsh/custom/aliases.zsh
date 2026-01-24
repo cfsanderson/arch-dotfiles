@@ -27,7 +27,7 @@ alias open='xdg-open'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias sourz='source $HOME/Projects/arch-dotfiles/zsh/.config/zsh/.zshrc'
-alias st='speedtest'
+alias st='nmcli connection show --active && speedtest-cli'
 alias stowr='cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */'
 ## removed sensitive alias
 alias to=touch_open

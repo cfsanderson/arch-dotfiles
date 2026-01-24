@@ -45,7 +45,7 @@
     "cpu": {
       "interval": 5,
       "format": "󰍛",
-      "on-click": "ghostty -e btop"
+      "on-click": "kitty -e btop"
     },
     "clock": {
       "format": "{:%A %H:%M}",
@@ -63,7 +63,7 @@
       "tooltip-format-disconnected": "Disconnected",
       "interval": 3,
       "nospacing": 1,
-      "on-click": "ghostty -e nmtui"
+      "on-click": "kitty -e nmtui"
     },
     "battery": {
       "format": "{capacity}% {icon}",
@@ -92,7 +92,7 @@
       "format-disabled": "󰂲",
       "format-connected": "",
       "tooltip-format": "Devices connected: {num_connections}",
-      "on-click": "GTK_THEME=Adwaita-dark blueberry"
+      "on-click": "GTK_THEME=Adwaita-dark blueman-manager"
     },
     "pulseaudio": {
       "format": "",
@@ -116,7 +116,7 @@
     "custom/dropbox": {
       "format": "",
       "on-click": "nautilus ~/Dropbox",
-      "exec": "dropbox-cli status",
+      "exec": "maestral status 2>/dev/null || echo 'Not running'",
       "return-type": "text",
       "interval": 5,
       "tooltip": true,

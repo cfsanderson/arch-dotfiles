@@ -9,6 +9,11 @@
 #                               @cfsanderson
 
 # --- Oh My Zsh Configuration ---
+
+unsetopt BEEP
+export LESS="-Q"
+
+
 # Aliases moved to ~/.oh-my-zsh/custom/aliases.zsh and accessible with "confalias" alias.
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
 
@@ -52,7 +57,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export PATH="$HOME/.local/bin:$PATH"
 
 # start gnome keyring
-export $(gnome-keyring-daemon --start --components=secrets 2>/dev/null)
+# export $(gnome-keyring-daemon --start --components=secrets 2>/dev/null)
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
