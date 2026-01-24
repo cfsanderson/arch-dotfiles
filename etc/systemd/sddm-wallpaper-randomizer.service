@@ -1,0 +1,10 @@
+[Unit]
+Description=Randomize SDDM wallpaper
+Before=sddm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sddm-wallpaper-randomizer.sh
+
+[Install]
+WantedBy=sddm.service
