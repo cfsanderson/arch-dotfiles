@@ -2,7 +2,7 @@
 
 **Machine:** M1 MacBook Pro (ARM64/aarch64)
 **OS:** Asahi Linux - Fedora KDE Remix
-**Last Updated:** 2026-01-22
+**Last Updated:** 2026-01-23
 
 ---
 
@@ -12,6 +12,8 @@
 - [x] Fixed `~/.config/hypr/envs.conf` - removed `ecosystem { no_update_news = true }` block (not supported in Hyprland 0.45.x on Fedora)
 - [x] Fixed `~/.config/hypr/envs.conf` - changed `GDK_SCALE=2` to `GDK_SCALE=1` (Hyprland handles scaling at 1.5x)
 - [x] Fixed `~/.config/mako/config` - removed inline comments (not supported by mako)
+- [x] Fixed clipboard paste issue - disabled `wl-paste --watch wl-copy` in autostart (was breaking system clipboard)
+- [x] Added window rule for Signal to prevent fullscreen on open
 
 ### Waybar Config Updates
 - [x] Changed `ghostty -e` to `kitty -e` (ghostty not available on ARM64)
@@ -31,6 +33,11 @@
 ### Installed via pipx
 - [x] maestral 1.9.6 - Open-source Dropbox client for ARM64
 
+### Maestral/Dropbox Setup (2026-01-23)
+- [x] Authenticated with `maestral auth link`
+- [x] Configured Dropbox folder at `~/Dropbox`
+- [x] Syncing working - files downloading
+
 ### Apps Installed (2026-01-22)
 - [x] **Obsidian** - via Flatpak (`flatpak install flathub md.obsidian.Obsidian`)
 - [x] **Signal Desktop** - via unofficial ARM64 Flatpak from signalflatpak.github.io
@@ -48,12 +55,23 @@
 - [x] Created `~/keyboard-shortcuts.md` with Hyprland shortcuts
 - [x] Set Electron scaling for Obsidian/Signal (1.75x)
 
+### Apps & Tools Installed (2026-01-23)
+- [x] **Yazi** - terminal file manager (v26.1.22) - downloaded ARM64 binary from GitHub releases
+- [x] Yazi config already stowed from dotfiles
+
+### System Customization (2026-01-23)
+- [x] Configured SDDM login screen background to match desktop wallpaper
+- [x] Added Kitty `clipboard_control` settings for explicit clipboard access
+- [x] Updated `~/keyboard-shortcuts.md` with Yazi keybindings and corrected tmux prefix (Ctrl+A)
+
+### Dotfiles Repository (2026-01-23)
+- [x] Created `asahi-m1-macbook` branch for Asahi-specific changes
+- [x] Fixed `.gitignore` (typo fix, added tmux plugins, zcompdump, .env.local, CLAUDE.local.md)
+- [x] Committed all Asahi adaptations (19 files changed)
+
 ---
 
 ## Pending Tasks
-
-### Maestral/Dropbox Setup
-- [ ] Run `maestral auth link` to authenticate with Dropbox (auth flow issues, deferred)
 
 ### Utilities Not Available on Fedora ARM64
 
@@ -84,6 +102,9 @@
 | lxpolkit | Running | Polkit agent |
 | Kitty | Working | Primary terminal |
 | Zen Browser | Working | Installed at /usr/local/bin |
+| Maestral | Running | Dropbox sync working |
+| Yazi | Working | v26.1.22, terminal file manager |
+| Tmux | Working | Plugins installed via TPM |
 
 ---
 
@@ -91,8 +112,9 @@
 
 ```
 Hyprland Version: 0.45.2
-Display: eDP-1 @ 3024x1890 (scale 1.5x)
+Display: eDP-1 @ 3024x1890 (scale 1.75x)
 Architecture: aarch64
+Dotfiles Branch: asahi-m1-macbook
 ```
 
 ---
@@ -100,9 +122,13 @@ Architecture: aarch64
 ## Files Modified
 
 - `~/.config/hypr/envs.conf`
-- `~/.config/hypr/autostart.conf`
+- `~/.config/hypr/autostart.conf` - clipboard watcher disabled
+- `~/.config/hypr/windows.conf` - Signal window rule added
 - `~/.config/mako/config`
 - `~/.config/waybar/config`
+- `~/.config/kitty/kitty.conf` - clipboard_control added
+- `/etc/sddm.conf.d/theme.conf` - custom login background
+- `~/keyboard-shortcuts.md` - Yazi keybindings added
 
 ---
 
@@ -116,3 +142,5 @@ Key differences between Arch and Fedora/Asahi:
 3. Hyprland 0.45.x lacks `ecosystem` config block
 4. Some Hyprland utilities (hyprshot, hyprpicker) not packaged for Fedora
 5. blueberry replaced with blueman
+6. `wl-paste --watch wl-copy` clipboard persistence breaks paste - disabled
+7. Yazi installed from GitHub binary (not in Fedora repos)
