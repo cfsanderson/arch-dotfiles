@@ -13,7 +13,7 @@ alias c='clear'
 alias dots='cd $HOME/Projects/arch-dotfiles/' 
 alias gs='git switch'
 alias home='cd $HOME && clear && fastfetch'
-alias key='bat ~/keyboard-shortcuts.md'
+alias key='bat ~/Documents/keyboard-shortcuts.md'
 alias l='ls -lAh'
 alias mkcdir=mkdir_cd
 mkdir_cd() {
@@ -26,6 +26,7 @@ alias open='xdg-open'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
 alias sourz='source $HOME/Projects/arch-dotfiles/zsh/.config/zsh/.zshrc && clear && fastfetch'
+alias spotify='brave-browser --app=https://open.spotify.com'
 alias st='nmcli connection show --active && speedtest-cli'
 alias stowr='cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */'
 ## removed sensitive alias
