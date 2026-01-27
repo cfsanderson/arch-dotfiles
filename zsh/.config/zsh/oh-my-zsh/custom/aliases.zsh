@@ -10,6 +10,7 @@
 
 # General
 alias c='clear'
+alias code='codium'
 alias dots='cd $HOME/Projects/arch-dotfiles/' 
 alias gs='git switch'
 alias home='cd $HOME && clear && fastfetch'
@@ -39,6 +40,7 @@ touch_open() {
 	: > "$1" && nvim "$1"
 }
 alias waybarreload='pkill -SIGUSR2 waybar'
+alias wl='hyprctl clients -j | jq -r ".[] | select(.class != \"kitty\") | \"\(.workspace.id)\t\(.class)\t\(.title)\""'
 alias weather='clear && curl wttr.in/Richmond'
 alias weathr='curl -s "wttr.in/Richmond,VA?format=3"'
 alias yt='yt-dlp'
