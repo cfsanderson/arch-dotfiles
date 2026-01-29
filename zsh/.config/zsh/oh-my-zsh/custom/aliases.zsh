@@ -30,7 +30,6 @@ alias sourz='source $HOME/Projects/arch-dotfiles/zsh/.config/zsh/.zshrc && clear
 alias spotify='brave-browser --app=https://open.spotify.com'
 alias st='nmcli connection show --active && speedtest-cli'
 alias stowr='cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */'
-## removed sensitive alias
 alias to=touch_open
 touch_open() {
 	if ! [ "$1" ]; then
@@ -39,6 +38,7 @@ touch_open() {
 	fi
 	: > "$1" && nvim "$1"
 }
+alias tp='trash-put'
 alias waybarreload='pkill -SIGUSR2 waybar'
 alias wl='hyprctl clients -j | jq -r ".[] | select(.class != \"kitty\") | \"\(.workspace.id)\t\(.class)\t\(.title)\""'
 alias weather='clear && curl wttr.in/Richmond'
@@ -54,3 +54,6 @@ alias confhypr='cd $HOME/Projects/arch-dotfiles/hyprland/.config/hypr/ && nvim .
 alias conftmux='cd $HOME/Projects/arch-dotfiles/tmux/.config/tmux/ && nvim .'
 alias confnv='cd $HOME/Projects/arch-dotfiles/nvim/.config/nvim/ && nvim init.lua'
 alias confzsh='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/ && nvim .zshrc'
+
+# Private/sensitive aliases go in ~/.config/zsh/oh-my-zsh/custom/local.zsh
+# That file is auto-sourced by Oh My Zsh but gitignored (entire oh-my-zsh/ dir is ignored)
