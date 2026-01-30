@@ -1,0 +1,6 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet --greeting 'Welcome back.' --time --remember --remember-session --sessions /usr/share/wayland-sessions --theme 'border=#3c3836;text=#e5dac7;prompt=#d8a657;time=#928374;action=#7daea3;button=#a9b665;container=#282828;input=#504945'"
+user = "greetd"
