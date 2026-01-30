@@ -41,6 +41,8 @@ touch_open() {
 alias tp='trash-put'
 alias waybarreload='pkill -SIGUSR2 waybar'
 alias wl='hyprctl clients -j | jq -r ".[] | select(.class != \"kitty\") | \"\(.workspace.id)\t\(.class)\t\(.title)\""'
+alias screenrecordingstart='wf-recorder -f "$HOME/Videos/ScreenRecordings/recording-$(date +%Y-%m-%d_%H-%M-%S).mp4" &'
+alias screenrecordingstop='pkill -SIGINT wf-recorder'
 alias weather='clear && curl wttr.in/Richmond'
 alias weathr='curl -s "wttr.in/Richmond,VA?format=3"'
 alias yt='yt-dlp'
