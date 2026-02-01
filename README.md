@@ -52,6 +52,7 @@ This repository serves as my personal dotfiles and a self-contained toolkit for 
 ### Added
 *   **Install Script:** This script uses a declarative package list and should make setting up a new system much easier.
 *   **Dotfile Management:** [GNU Stow](https://www.gnu.org/software/stow/)
+*   **Calendar:** [khal](https://khal.readthedocs.io/) + [vdirsyncer](https://github.com/pimutils/vdirsyncer) for terminal calendar with iCloud CalDAV sync and Strava training calendar subscription
 *   **Color Scheme:** My fork of [Sainnhe's Gruvbox Material](https://github.com/cfsanderson/cfs-gruvbox-material) for theming.
 	* Includes a **master color palette system** in `colors/` directory with CSS and shell variables for consistent theming
 	* All applications use exact colors from the Neovim theme for perfect visual consistency

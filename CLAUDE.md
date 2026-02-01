@@ -25,6 +25,8 @@ This is a personal Arch Linux dotfiles repository that provides a complete Hyprl
 - `confghostty` - Edit Ghostty terminal config: `cd ghostty/.config/ghostty/ && nvim config`
 - `confalias` - Edit shell aliases: `cd zsh/.config/zsh/oh-my-zsh/custom/ && nvim aliases.zsh`
 - `confzsh` - Edit Zsh main config: `cd ~/.config/zsh/ && nvim .zshrc`
+- `cal` - Open khal interactive calendar TUI (syncs on exit)
+- `calday` - List upcoming calendar events
 
 ## Architecture
 
@@ -40,6 +42,8 @@ The repository uses GNU Stow's directory structure where each top-level director
 - `mako/` - Notification daemon configuration
 - `btop/` - System monitor configuration
 - `fastfetch/` - System info display configuration
+- `khal/` - Calendar TUI configuration (gruvbox-material themed palette)
+- `vdirsyncer/` - Calendar sync (iCloud CalDAV + Strava HTTP) with systemd timer
 - `packages/` - Package lists for reproducible installs
 - `etc/` - System-level configurations (requires manual copying to /etc/)
 - `wallpapers/` - Desktop wallpapers
@@ -67,6 +71,7 @@ Hyprland config is modularized across multiple files in `hyprland/.config/hypr/`
 - **Bar**: Waybar
 - **File Manager**: Nautilus
 - **Notifications**: Mako
+- **Calendar**: khal + vdirsyncer (iCloud CalDAV sync, Strava training calendar)
 
 ### Theme
 Uses a custom fork of Sainnhe's Gruvbox Material theme for consistent theming across applications.
@@ -78,6 +83,12 @@ Uses a custom fork of Sainnhe's Gruvbox Material theme for consistent theming ac
 2. **Manual System Configuration**: After running `install.sh`, system-level configs in `etc/` must be manually copied to `/etc/` with sudo privileges.
 
 3. **Shell Change**: The install script will change the default shell to Zsh if not already set.
+
+4. **Calendar Setup**: After stowing, add credentials to `~/.config/zsh/.env.local`:
+   - `ICLOUD_EMAIL` - Apple ID email
+   - `ICLOUD_APP_PASSWORD` - App-specific password from appleid.apple.com
+   - `STRAVA_CALENDAR_URL` - Full URL to Raspberry Pi calendar server (e.g. `http://<PI_IP>:8080/training_calendar.ics`)
+   - Then run `vdirsyncer discover && vdirsyncer sync` and enable the timer: `systemctl --user enable --now vdirsyncer.timer`
 
 ## Development Workflow
 
@@ -96,6 +107,12 @@ When modifying this dotfiles setup:
 - Sessions reach important conclusions or milestones
 
 This helps maintain continuity between sessions and provides a record of what has been accomplished.
+
+### Secrets Management
+- **Tracked configs** contain no PII or credentials — all secrets are fetched at runtime from environment variables
+- **`~/.config/zsh/.env.local`** (gitignored) stores sensitive env vars, sourced by `.zshrc`
+- **`~/.config/zsh/oh-my-zsh/custom/local.zsh`** (gitignored) stores sensitive aliases
+- vdirsyncer uses `command` fetch to read env vars (`username.fetch`, `password.fetch`, `url.fetch`)
 
 ## Notes
 
