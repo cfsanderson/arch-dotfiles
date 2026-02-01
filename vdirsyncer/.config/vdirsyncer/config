@@ -1,0 +1,46 @@
+# vdirsyncer configuration
+# Secrets are stored in environment variables (sourced from ~/.config/zsh/.env.local)
+#
+# Required env vars:
+#   ICLOUD_EMAIL          - Your iCloud/Apple ID email
+#   ICLOUD_APP_PASSWORD   - App-specific password (generate at appleid.apple.com)
+#   STRAVA_CALENDAR_URL   - Full URL to Pi's calendar (e.g. http://192.168.1.192:8080/training_calendar.ics)
+
+[general]
+status_path = "~/.local/share/vdirsyncer/status/"
+
+# --- iCloud CalDAV (bidirectional sync) ---
+
+[pair icloud]
+a = "icloud_local"
+b = "icloud_remote"
+collections = ["from a", "from b"]
+metadata = ["color", "displayname"]
+conflict_resolution = ["command", "vimdiff"]
+
+[storage icloud_local]
+type = "filesystem"
+path = "~/.local/share/calendars/icloud/"
+fileext = ".ics"
+
+[storage icloud_remote]
+type = "caldav"
+url = "https://caldav.icloud.com/"
+username.fetch = ["command", "sh", "-c", "echo $ICLOUD_EMAIL"]
+password.fetch = ["command", "sh", "-c", "echo $ICLOUD_APP_PASSWORD"]
+
+# --- Strava Training Calendar (read-only from Raspberry Pi) ---
+
+[pair strava]
+a = "strava_local"
+b = "strava_remote"
+collections = null
+
+[storage strava_local]
+type = "filesystem"
+path = "~/.local/share/calendars/strava/"
+fileext = ".ics"
+
+[storage strava_remote]
+type = "http"
+url.fetch = ["command", "sh", "-c", "echo $STRAVA_CALENDAR_URL"]

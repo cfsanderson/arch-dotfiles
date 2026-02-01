@@ -10,6 +10,8 @@
 
 # General
 alias c='clear'
+alias cal='khal interactive 2>/dev/null; vdirsyncer sync 2>/dev/null &'
+alias calday='khal list'
 alias code='codium'
 alias dots='cd $HOME/Projects/arch-dotfiles/' 
 alias gs='git switch'

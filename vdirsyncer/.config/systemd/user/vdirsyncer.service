@@ -1,0 +1,7 @@
+[Unit]
+Description=Sync calendars with vdirsyncer
+Documentation=https://vdirsyncer.pimutils.org
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -lc 'source ~/.config/zsh/.env.local && vdirsyncer sync'

@@ -1,0 +1,90 @@
+# khal configuration
+# Calendar data is synced by vdirsyncer to ~/.local/share/calendars/
+# Colors use terminal ANSI names — actual hex values come from your terminal's
+# gruvbox theme (kitty/ghostty), so these map to gruvbox-material colors.
+
+[calendars]
+
+# --- iCloud Calendars ---
+
+[[caleb]]
+path = ~/.local/share/calendars/icloud/BE8A567A-CB79-4E24-B77F-77D66BA9F892/
+type = calendar
+color = dark green
+
+[[family]]
+path = ~/.local/share/calendars/icloud/a0b10cce-5be3-47f6-ba55-e399690532cc/
+type = calendar
+color = yellow
+
+[[family_shared]]
+path = ~/.local/share/calendars/icloud/27a2b85f-aa04-464c-9577-c118e40d4ce4/
+type = calendar
+color = brown
+
+[[bills]]
+path = ~/.local/share/calendars/icloud/a890bbf78a1442af89b51d89d4fb90e5/
+type = calendar
+color = dark red
+
+[[activities]]
+path = ~/.local/share/calendars/icloud/6de22bafad054e2d8f3b08f1c03571d9/
+type = calendar
+color = dark cyan
+
+[[reminders]]
+path = ~/.local/share/calendars/icloud/3065e407-2ddd-4490-b06c-c1153e813945/
+type = calendar
+color = dark magenta
+
+[[cody]]
+path = ~/.local/share/calendars/icloud/e063936b1976987341e27ec2d2f5b00358396e9ca9b1e139cbf5a87bcee4ec37/
+type = calendar
+color = light blue
+
+[[clover]]
+path = ~/.local/share/calendars/icloud/7aabb1cc3f42a37f87a4dadcccb0cb9932cfc1c20405aeddc8322a7c3b2f3979/
+type = calendar
+color = light magenta
+
+[[cohen]]
+path = ~/.local/share/calendars/icloud/8a023dd4dc950e2ca8c80a74acfb6a9d04705e8105cfea1993fa89d2b3fb86fc/
+type = calendar
+color = light cyan
+
+# --- Strava Training Calendar (from Raspberry Pi) ---
+
+[[strava]]
+path = ~/.local/share/calendars/strava/
+type = calendar
+color = light red
+readonly = true
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[view]
+theme = dark
+
+[palette]
+# Format: fg, bg, mono, fg_high, bg_high
+# fg_high/bg_high use hex for 24-bit color (gruvbox-material values)
+edit = white, dark gray, '', '#e5dac7', '#3c3836'
+edit focus = white, dark gray, 'bold', '#e5dac7', '#504945'
+button = white, black, '', '#ddc7a1', '#3c3836'
+button focused = white, dark gray, 'bold', '#e5dac7', '#504945'
+header = white, black, '', '#e5dac7', '#1a1919'
+footer = white, black, '', '#ddc7a1', '#1a1919'
+today = white, black, 'bold', '#d8a657', ''
+today focus = white, dark gray, 'bold', '#e5dac7', '#504945'
+frame = white, black, '', '#928374', ''
+frame focus = white, black, '', '#e5dac7', ''
+popupbg = white, dark gray, '', '#e5dac7', '#282828'
+
+[default]
+default_calendar = caleb
+highlight_event_days = true
