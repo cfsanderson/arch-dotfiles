@@ -47,6 +47,7 @@ alias screenrecordingstart='wf-recorder -f "$HOME/Videos/ScreenRecordings/record
 alias screenrecordingstop='pkill -SIGINT wf-recorder'
 alias weather='clear && curl wttr.in/Richmond'
 alias weathr='curl -s "wttr.in/Richmond,VA?format=3"'
+alias yazikeys='bat ~/Documents/yazikeys.md'
 alias yt='yt-dlp'
 alias ytm='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0'
 

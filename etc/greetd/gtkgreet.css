@@ -1,0 +1,55 @@
+window {
+    background-image: url("/usr/share/backgrounds/gruvbox-city.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+box#body {
+    background-color: rgba(40, 40, 40, 0.85);
+    border-radius: 12px;
+    padding: 40px;
+    margin: 50px;
+    border: 2px solid #3c3836;
+}
+
+entry {
+    background-color: #504945;
+    color: #e5dac7;
+    border: 1px solid #3c3836;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+entry:focus {
+    border-color: #d8a657;
+}
+
+label {
+    color: #e5dac7;
+    font-size: 16px;
+}
+
+button {
+    background-color: #a9b665;
+    color: #282828;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    margin: 6px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #b8c574;
+}
+
+combobox button {
+    background-color: #504945;
+    color: #e5dac7;
+}
+
+combobox button:hover {
+    background-color: #665c54;
+}
