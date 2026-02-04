@@ -78,7 +78,9 @@ Uses a custom fork of Sainnhe's Gruvbox Material theme for consistent theming ac
 
 ## Critical Setup Requirements
 
-1. **Monitor Configuration**: Before stowing configs, create `~/.config/hypr/monitors.conf` with machine-specific monitor settings. Use `hyprctl monitors` to find monitor names.
+1. **Monitor Configuration**: Before stowing configs, create `~/.config/hypr/monitors.conf` with machine-specific monitor settings. Use `hyprctl monitors` to find monitor names. The included config has the M1 Max MacBook Pro internal display and Dell U2720QM 4K via HDMI.
+
+5. **Peripheral Boot Limitation (Asahi Linux)**: USB-C dongles and HDMI monitors must be plugged in **after boot**, not before. U-Boot's XHCI driver hangs on multi-function USB hubs, and the DCP DP2HDMI bridge fails to initialize external displays at boot. Both work fine when hot-plugged after the desktop loads.
 
 2. **Manual System Configuration**: After running `install.sh`, system-level configs in `etc/` must be manually copied to `/etc/` with sudo privileges.
 
