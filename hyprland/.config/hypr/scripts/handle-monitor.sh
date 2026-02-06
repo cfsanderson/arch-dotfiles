@@ -9,6 +9,10 @@
 #   handle-monitor.sh arrange      - One-shot workspace arrangement
 #   handle-monitor.sh switch N     - Switch to workspace N on its assigned monitor
 #   handle-monitor.sh movetoworkspace N - Move active window to workspace N on its assigned monitor
+#
+# NOTE: Do NOT use `hyprctl keyword workspace` rules — they poison the workspace
+# dispatcher and override focusmonitor for all future workspace creation.
+# Instead, rely solely on focusmonitor + workspace dispatch + moveworkspacetomonitor.
 
 set -euo pipefail
 
@@ -46,20 +50,16 @@ arrange_workspaces() {
     local external_present
     external_present=$(echo "$monitors" | jq -r "[.[] | select(.name == \"$EXTERNAL\")] | length")
 
+    # Move existing workspaces to their assigned monitors
     if [[ "$external_present" -ge 1 ]]; then
-        # Dual monitor: 1-5 on laptop, 6-10 on external
         for ws in "${LAPTOP_WORKSPACES[@]}"; do
-            hyprctl keyword workspace "$ws, monitor:$LAPTOP, default:true" > /dev/null 2>&1
             hyprctl dispatch moveworkspacetomonitor "$ws $LAPTOP" > /dev/null 2>&1
         done
         for ws in "${EXTERNAL_WORKSPACES[@]}"; do
-            hyprctl keyword workspace "$ws, monitor:$EXTERNAL, default:true" > /dev/null 2>&1
             hyprctl dispatch moveworkspacetomonitor "$ws $EXTERNAL" > /dev/null 2>&1
         done
     else
-        # Single monitor: all workspaces on laptop
         for ws in "${LAPTOP_WORKSPACES[@]}" "${EXTERNAL_WORKSPACES[@]}"; do
-            hyprctl keyword workspace "$ws, monitor:$LAPTOP, default:true" > /dev/null 2>&1
             hyprctl dispatch moveworkspacetomonitor "$ws $LAPTOP" > /dev/null 2>&1
         done
     fi
@@ -69,6 +69,7 @@ arrange_workspaces() {
         local mon_name=${line%%:*}
         local ws_id=${line##*:}
         if echo "$monitors" | jq -e ".[] | select(.name == \"$mon_name\")" > /dev/null 2>&1; then
+            hyprctl dispatch focusmonitor "$mon_name" > /dev/null 2>&1
             hyprctl dispatch workspace "$ws_id" > /dev/null 2>&1
         fi
     done <<< "$active_workspaces"
@@ -85,9 +86,6 @@ switch_workspace() {
 # Move active window to workspace on its assigned monitor (used by keybindings)
 move_to_workspace() {
     local ws=$1
-    local mon
-    mon=$(target_monitor "$ws")
-    # Move workspace to correct monitor first (if it exists elsewhere), then move window
     hyprctl dispatch movetoworkspace "$ws" > /dev/null 2>&1
 }
 
