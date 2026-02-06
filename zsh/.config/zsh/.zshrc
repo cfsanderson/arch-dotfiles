@@ -12,7 +12,7 @@
 
 unsetopt BEEP
 export LESS="-Q"
-
+PS2="... "  # Cleaner look for bash
 
 # Aliases moved to ~/.oh-my-zsh/custom/aliases.zsh and accessible with "confalias" alias.
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
