@@ -92,20 +92,15 @@ Use the official `archinstall` script for a reliable base system.
 
 ---
 
-### Phase 2: First Boot & AUR Helper Setup
+### Phase 2: First Boot & COPR Setup
 
 After rebooting, you will be in a minimal Hyprland session.
 
 1.  **Open a Terminal:** Press `SUPER + Return`.
-2.  **Install `yay`:**
+2.  **Enable COPR repositories** (for Hyprland updates, rmpc, etc.):
     ```bash
-    # Install build tools
-    sudo pacman -S --needed base-devel
-
-    # Clone, build, and install yay
-    git clone https://aur.archlinux.org/yay-bin.git
-    cd yay-bin
-    makepkg -si
+    sudo dnf copr enable -y sdegler/hyprland
+    sudo dnf copr enable -y skoved/rmpc
     ```
 
 ---
@@ -127,7 +122,7 @@ This is where this dotfiles repository takes over.
     ```
 
 3.  **Run the Automated Install Script:**
-    This script will install all packages and stow all dotfiles.
+    This script enables COPR repos, installs DNF packages, installs Flatpak apps, and stows all dotfiles.
     ```bash
     cd ~/Projects/arch-dotfiles
     ./install.sh
@@ -199,8 +194,8 @@ After this final reboot, the system should be ready to roll - a pre-rolled, pers
 ### Post install:
 - Connect to Wi-Fi for the first time using `nmtui`.
 - Open Neovim for the first time (`nv` alias or standard `nvim`) and the `lazy.nvim` plugin manager will automatically install all the required plugins. You will want to close and restart to see all the changes. Check out [this video](https://youtu.be/m8C0Cq9Uv9o?si=T4lvWKUjSLpFy-pZ) on getting started with it.
-- The `install.sh` script grabs all the packages in the `~/Projects/arch-dotfiles/packages/<file>.txt` and installs them for you. When you inevitably add more, there is an `archpack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
-	- `alias archpack='pacman -Qen > ~/Projects/arch-dotfiles/packages/packages-official.txt && pacman -Qem > ~/Projects/arch-dotfiles/packages/packages-aur.txt'`
+- The `install.sh` script grabs all the packages in the `~/Projects/arch-dotfiles/packages/` directory and installs them for you. When you inevitably add more, there is a `fedorapack` alias in `~/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/aliases.zsh` that will rebuild these files and keep your packages up to date.
+	- Generates `packages-dnf.txt` (user-installed DNF packages), `packages-flatpak.txt` (Flatpak apps), and `packages-copr.txt` (enabled COPR repos)
 
 ## Customizing Colors and Themes
 

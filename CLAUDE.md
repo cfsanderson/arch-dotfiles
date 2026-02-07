@@ -4,19 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a personal Arch Linux dotfiles repository that provides a complete Hyprland desktop environment setup. It's inspired by DHH's Omarchy project but customized with personal preferences. The repository uses GNU Stow for dotfile management and includes an automated installation script.
+This is a personal dotfiles repository for Fedora Asahi Linux (Apple Silicon) that provides a complete Hyprland desktop environment setup. It's inspired by DHH's Omarchy project but customized with personal preferences. The repository uses GNU Stow for dotfile management and includes an automated installation script.
 
 ## Key Commands
 
 ### Installation and Setup
 - `./install.sh` - Main installation script that installs packages, plugins, and stows all dotfiles
-- `archpack` - Alias to rebuild package lists (updates packages-official.txt and packages-aur.txt)
+- `fedorapack` - Alias to rebuild package lists (updates packages-dnf.txt, packages-flatpak.txt, packages-copr.txt)
 - `stowr` - Alias to re-stow all dotfiles: `cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */`
 
 ### Package Management
-- Package lists are stored in `packages/packages-official.txt` (pacman) and `packages/packages-aur.txt` (AUR/yay)
-- Use `pacman -S --needed --noconfirm - < packages/packages-official.txt` to install official packages
-- Use `yay -S --needed --noconfirm - < packages/packages-aur.txt` to install AUR packages
+- Package lists are stored in `packages/packages-dnf.txt` (dnf), `packages/packages-flatpak.txt` (Flatpak), and `packages/packages-copr.txt` (COPR repos)
+- Use `sudo dnf install -y $(cat packages/packages-dnf.txt)` to install DNF packages
+- Use `flatpak install -y flathub <app-id>` to install Flatpak apps
+- Use `sudo dnf copr enable -y <owner/repo>` to enable COPR repositories
 
 ### Configuration Shortcuts (via aliases)
 - `confhypr` - Edit Hyprland configs: `cd hyprland/.config/hypr/ && nvim .`
@@ -101,7 +102,7 @@ Uses a custom fork of Sainnhe's Gruvbox Material theme for consistent theming ac
 When modifying this dotfiles setup:
 1. Make changes to files in the appropriate package directory
 2. Test changes by re-stowing: `stowr`
-3. Update package lists when adding new software: `archpack`
+3. Update package lists when adding new software: `fedorapack`
 4. The Neovim config includes a CLAUDE.md specific to that configuration
 
 ## Session History Tracking
@@ -122,7 +123,7 @@ This helps maintain continuity between sessions and provides a record of what ha
 
 ## Notes
 
-- This setup is hardware-specific to a 2015 MacBook Pro but Phases 0-3 of installation should be hardware agnostic
+- This setup runs on Fedora Asahi Linux on an Apple Silicon MacBook Pro
 - The repository includes submodules (use `git clone --recurse-submodules` when cloning)
 - Wi-Fi connection after install: use `nmtui` for first-time connection
-- Package management uses both pacman (official) and yay (AUR) package managers
+- Package management uses dnf (Fedora repos + COPR) and Flatpak
