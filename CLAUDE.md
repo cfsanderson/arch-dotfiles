@@ -25,6 +25,7 @@ This is a personal Arch Linux dotfiles repository that provides a complete Hyprl
 - `confghostty` - Edit Ghostty terminal config: `cd ghostty/.config/ghostty/ && nvim config`
 - `confalias` - Edit shell aliases: `cd zsh/.config/zsh/oh-my-zsh/custom/ && nvim aliases.zsh`
 - `confzsh` - Edit Zsh main config: `cd ~/.config/zsh/ && nvim .zshrc`
+- `music` - Launch rmpc music player (stops MPD on exit)
 - `cal` - Open khal interactive calendar TUI (syncs on exit)
 - `calday` - List upcoming calendar events
 
@@ -42,6 +43,8 @@ The repository uses GNU Stow's directory structure where each top-level director
 - `mako/` - Notification daemon configuration
 - `btop/` - System monitor configuration
 - `fastfetch/` - System info display configuration
+- `mpd/` - Music Player Daemon configuration (PipeWire output, localhost)
+- `rmpc/` - rmpc MPD TUI client config + gruvbox-material theme (`themes/gruvbox.ron`)
 - `khal/` - Calendar TUI configuration (gruvbox-material themed palette)
 - `vdirsyncer/` - Calendar sync (iCloud CalDAV + Strava HTTP) with systemd timer
 - `packages/` - Package lists for reproducible installs
@@ -71,6 +74,7 @@ Hyprland config is modularized across multiple files in `hyprland/.config/hypr/`
 - **Bar**: Waybar
 - **File Manager**: Nautilus
 - **Notifications**: Mako
+- **Music**: MPD + rmpc (TUI client, gruvbox-themed; `music` alias stops playback on exit)
 - **Calendar**: khal + vdirsyncer (iCloud CalDAV sync, Strava training calendar)
 
 ### Theme

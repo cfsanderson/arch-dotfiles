@@ -52,6 +52,7 @@ This repository serves as my personal dotfiles and a self-contained toolkit for 
 ### Added
 *   **Install Script:** This script uses a declarative package list and should make setting up a new system much easier.
 *   **Dotfile Management:** [GNU Stow](https://www.gnu.org/software/stow/)
+*   **Music:** [MPD](https://www.musicpd.org/) + [rmpc](https://github.com/mierak/rmpc) for music playback with a gruvbox-material themed TUI client
 *   **Calendar:** [khal](https://khal.readthedocs.io/) + [vdirsyncer](https://github.com/pimutils/vdirsyncer) for terminal calendar with iCloud CalDAV sync and Strava training calendar subscription
 *   **Color Scheme:** My fork of [Sainnhe's Gruvbox Material](https://github.com/cfsanderson/cfs-gruvbox-material) for theming.
 	* Includes a **master color palette system** in `colors/` directory with CSS and shell variables for consistent theming
@@ -220,6 +221,6 @@ This setup includes a comprehensive master color palette system for easy customi
   3. Restart applications to see changes
   4. All applications automatically inherit the new colors
 
-- **Supported Applications:** Waybar (CSS variables), Wofi (GTK colors), Mako (template), Hyprland, Hyprlock, and more all use the master palette for perfect consistency
+- **Supported Applications:** Waybar (CSS variables), Wofi (GTK colors), Mako (template), Hyprland, Hyprlock, rmpc, and more all use the master palette for perfect consistency
 
 See `colors/README.md` for detailed documentation on customizing colors and adding support to new applications.

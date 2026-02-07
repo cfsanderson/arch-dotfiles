@@ -20,6 +20,7 @@ alias home='cd $HOME && clear && fastfetch'
 alias key='bat ~/Documents/keyboard-shortcuts.md'
 alias l='ls -lAh'
 alias la='ls -a'
+alias music='rmpc; rmpc stop'
 alias mkcdir=mkdir_cd
 mkdir_cd() {
     mkdir -p -- "$1" &&
