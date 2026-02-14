@@ -50,8 +50,8 @@
       "on-click": "kitty -e btop"
     },
     "clock": {
-      "format": "{:%A %H:%M}",
-      "format-alt": "{:%d %B W%V %Y}",
+      "format": "{:%H:%M }",
+      "format-alt": "{:%H:%M | %A %d | W%V %B %Y}",
       "tooltip": false
     },
     "network": {
@@ -204,8 +204,8 @@
       "on-click": "kitty -e btop"
     },
     "clock": {
-      "format": "{:%A %H:%M}",
-      "format-alt": "{:%d %B W%V %Y}",
+      "format": "{:%H:%M }",
+      "format-alt": "{:%H:%M | %A %d | W%V %B %Y}",
       "tooltip": false
     },
     "bluetooth": {
