@@ -1,0 +1,73 @@
+# vim: ft=dosini
+#
+# Gruvbox Material styleset for aerc
+# Based on Sainnhe's Gruvbox Material palette
+
+*.default = true
+*.normal = true
+
+*.selected.bg = #282828
+*.selected.fg = #ddc7a1
+*.selected.bold = true
+
+statusline_*.bg = #282828
+statusline_*.fg = #ddc7a1
+
+*warning.fg = #d8a657
+*warning.bold = true
+*success.fg = #a9b665
+*success.bold = true
+*error.fg = #ea6962
+*error.bold = true
+
+border.fg = #504945
+title.bg = #282828
+title.fg = #ddc7a1
+title.bold = true
+
+header.fg = #7daea3
+header.bold = true
+
+msglist_unread.bold = true
+msglist_unread.fg = #ddc7a1
+msglist_deleted.fg = #928374
+msglist_marked.bg = #504945
+msglist_marked.fg = #d3869b
+msglist_pill.bg = #a9b665
+msglist_pill.fg = #1a1919
+
+part_mimetype.fg = #7daea3
+
+selector_chooser.bold = true
+selector_focused.bold = true
+selector_focused.bg = #a9b665
+selector_focused.fg = #1a1919
+
+completion_*.bg = #282828
+completion_pill.bg = #a9b665
+completion_default.fg = #ddc7a1
+completion_description.fg = #928374
+
+[viewer]
+*.default = true
+*.normal = true
+url.underline = true
+url.fg = #7daea3
+header.bold = true
+header.fg = #7daea3
+signature.dim = true
+signature.fg = #928374
+diff_meta.bold = true
+diff_chunk.fg = #7daea3
+diff_chunk_func.fg = #7daea3
+diff_chunk_func.dim = true
+diff_add.fg = #a9b665
+diff_del.fg = #ea6962
+quote_1.fg = #89b482
+quote_2.fg = #7daea3
+quote_3.fg = #89b482
+quote_3.dim = true
+quote_4.fg = #7daea3
+quote_4.dim = true
+quote_x.fg = #d3869b
+quote_x.dim = true
