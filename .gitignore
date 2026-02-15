@@ -23,5 +23,8 @@ mpd/.config/mpd/pid
 # Editor/tool artifacts
 .crush/
 
+# aerc accounts (contains PII - email address)
+aerc/.config/aerc/accounts.conf
+
 # Local session notes (machine-specific)
 CLAUDE.local.md
