@@ -17,6 +17,11 @@ alias code='codium'
 alias dots='cd $HOME/Projects/arch-dotfiles/'
 alias fedorapack='dnf repoquery --userinstalled --qf "%{name}\n" 2>/dev/null | sort -u > ~/Projects/arch-dotfiles/packages/packages-dnf.txt && flatpak list --app --columns=application 2>/dev/null | sort > ~/Projects/arch-dotfiles/packages/packages-flatpak.txt && grep -l "copr" /etc/yum.repos.d/*.repo 2>/dev/null | xargs grep -l "enabled=1" | sed "s|.*/copr:copr.fedorainfracloud.org:||;s|\.repo||" | tr ":" "/" | grep -v "^@" | sort > ~/Projects/arch-dotfiles/packages/packages-copr.txt && echo "Package lists updated."' 
 alias gs='git switch'
+fastfetch() {
+    local logo
+    logo=$(ls ~/.config/fastfetch/star-wars-ascii/*.txt | shuf -n 1)
+    command fastfetch --file "$logo" "$@"
+}
 alias home='cd $HOME && clear && fastfetch'
 alias kbhypr='bat $HOME/Documents/keyboard-shorcuts/hyprland.md'
 alias kbtmux='bat $HOME/Documents/keyboard-shorcuts/tmux.md'
