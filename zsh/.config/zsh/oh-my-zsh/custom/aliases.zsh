@@ -7,8 +7,38 @@
 #                                                     
 #===============================================================================
 #                               @cfsanderson
+#
+# Private/sensitive aliases go in ~/.config/zsh/oh-my-zsh/custom/local.zsh
+# which is auto-sourced by Oh My Zsh but gitignored along with entire
+# oh-my-zsh/ directory
+#
+#===============================================================================
+#
+# Functions:
 
-# General
+fastfetch() {
+    local logo
+    logo=$(ls ~/.config/fastfetch/star-wars-ascii/*.txt | shuf -n 1)
+    command fastfetch --file "$logo" "$@"
+}
+
+mkdir_cd() {
+    mkdir -p -- "$1" &&
+    cd -P -- "$1" &&
+    ls -la
+}
+
+touch_open() {
+	if ! [ "$1" ]; then
+		echo "need a file!" >&2
+		return 1
+	fi
+	: > "$1" && nvim "$1"
+}
+
+#===============================================================================
+#
+# General:
 alias c='clear'
 alias cal='khal interactive 2>/dev/null; vdirsyncer sync 2>/dev/null &'
 alias calc='qalc'
@@ -17,11 +47,6 @@ alias code='codium'
 alias dots='cd $HOME/Projects/arch-dotfiles/'
 alias fedorapack='dnf repoquery --userinstalled --qf "%{name}\n" 2>/dev/null | sort -u > ~/Projects/arch-dotfiles/packages/packages-dnf.txt && flatpak list --app --columns=application 2>/dev/null | sort > ~/Projects/arch-dotfiles/packages/packages-flatpak.txt && grep -l "copr" /etc/yum.repos.d/*.repo 2>/dev/null | xargs grep -l "enabled=1" | sed "s|.*/copr:copr.fedorainfracloud.org:||;s|\.repo||" | tr ":" "/" | grep -v "^@" | sort > ~/Projects/arch-dotfiles/packages/packages-copr.txt && echo "Package lists updated."' 
 alias gs='git switch'
-fastfetch() {
-    local logo
-    logo=$(ls ~/.config/fastfetch/star-wars-ascii/*.txt | shuf -n 1)
-    command fastfetch --file "$logo" "$@"
-}
 alias home='cd $HOME && clear && fastfetch'
 alias kbhypr='bat $HOME/Documents/keyboard-shorcuts/hyprland.md'
 alias kbtmux='bat $HOME/Documents/keyboard-shorcuts/tmux.md'
@@ -34,11 +59,6 @@ alias la='ls -a'
 alias mail='aerc'
 alias music='rmpc; rmpc stop'
 alias mkcdir=mkdir_cd
-mkdir_cd() {
-    mkdir -p -- "$1" &&
-    cd -P -- "$1" &&
-    ls -la
-}
 alias nv='nvim'
 alias open='xdg-open'
 alias pbcopy='wl-copy'
@@ -48,13 +68,6 @@ alias spotify='brave-browser --app=https://open.spotify.com'
 alias st='nmcli connection show --active && speedtest-cli'
 alias stowr='cd ~/Projects/arch-dotfiles/ && stow -R -t $HOME */'
 alias to=touch_open
-touch_open() {
-	if ! [ "$1" ]; then
-		echo "need a file!" >&2
-		return 1
-	fi
-	: > "$1" && nvim "$1"
-}
 alias tp='trash-put'
 alias waybarreload='pkill -SIGUSR2 waybar'
 alias wl='hyprctl clients -j | jq -r ".[] | select(.class != \"kitty\") | \"\(.workspace.id)\t\(.class)\t\(.title)\""'
@@ -66,7 +79,9 @@ alias yazikeys='bat ~/Documents/yazikeys.md'
 alias yt='yt-dlp'
 alias ytm='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0'
 
-# Configs
+#===============================================================================
+#
+# Configs:
 alias conf='/usr/bin/git --git-dir=$HOME/.cfs-dotfiles/ --work-tree=$HOME'
 alias confalias='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/oh-my-zsh/custom/ && nvim aliases.zsh'
 alias confkitty='cd $HOME/Projects/arch-dotfiles/kitty/.config/kitty/ && nvim .'
@@ -75,5 +90,3 @@ alias conftmux='cd $HOME/Projects/arch-dotfiles/tmux/.config/tmux/ && nvim .'
 alias confnv='cd $HOME/Projects/arch-dotfiles/nvim/.config/nvim/ && nvim init.lua'
 alias confzsh='cd $HOME/Projects/arch-dotfiles/zsh/.config/zsh/ && nvim .zshrc'
 
-# Private/sensitive aliases go in ~/.config/zsh/oh-my-zsh/custom/local.zsh
-# That file is auto-sourced by Oh My Zsh but gitignored (entire oh-my-zsh/ dir is ignored)
