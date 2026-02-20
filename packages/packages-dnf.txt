@@ -107,6 +107,7 @@ gnupg2-g13
 gnupg2-scdaemon
 gnupg2-utils
 gnupg2-wks
+grim
 greetd
 grub2-efi-aa64
 grub2-efi-aa64-modules
@@ -267,6 +268,7 @@ setroubleshoot
 setup
 shadow-utils
 shim-aa64
+slurp
 smartmontools
 socat
 sos
@@ -314,6 +316,7 @@ wayland-devel
 wayland-protocols-devel
 wf-recorder
 wget2-wget
+wl-clipboard
 which
 whois
 wireplumber
