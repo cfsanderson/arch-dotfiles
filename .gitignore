@@ -28,3 +28,6 @@ aerc/.config/aerc/accounts.conf
 
 # Local session notes (machine-specific)
 CLAUDE.local.md
+
+# Claude Code internal files (worktrees, settings)
+.claude/

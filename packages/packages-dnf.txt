@@ -1,4 +1,5 @@
 aajohan-comfortaa-fonts
+abcde
 abrt-cli
 abrt-desktop
 acl
@@ -36,6 +37,8 @@ btrfs-progs
 bzip2
 cage
 cairo-devel
+cd-discid
+cdparanoia
 chrony
 cifs-utils
 cmake
@@ -89,6 +92,7 @@ filesystem
 firefox
 firewall-config
 firewalld
+flac
 flatpak
 fpaste
 fprintd-pam
@@ -143,6 +147,7 @@ ibus-libpinyin
 ibus-m17n
 ibus-table-chinese-cangjie
 ibus-typing-booster
+id3v2
 im-chooser
 imsettings
 imsettings-gsettings
@@ -161,6 +166,7 @@ khal
 kitty
 kleopatra
 kunifiedpush
+lame
 less
 libappindicator-gtk3
 libdrm-devel
@@ -217,6 +223,7 @@ opensc
 openssh-clients
 openssh-server
 open-vm-tools-desktop
+opus-tools
 orca
 PackageKit-command-not-found
 PackageKit-gstreamer-plugin
@@ -311,6 +318,7 @@ util-linux
 vdirsyncer
 vim-minimal
 vlc-plugin-gstreamer
+vorbis-tools
 waybar
 wayland-devel
 wayland-protocols-devel
