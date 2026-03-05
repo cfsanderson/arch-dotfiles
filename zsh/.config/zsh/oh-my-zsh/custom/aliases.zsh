@@ -36,6 +36,11 @@ touch_open() {
 	: > "$1" && nvim "$1"
 }
 
+cursor() {
+  command cursor "$@" > /dev/null 2>&1 &
+  disown
+}
+
 #===============================================================================
 #
 # General:
@@ -53,6 +58,7 @@ alias kbtmux='bat $HOME/Documents/keyboard-shorcuts/tmux.md'
 alias kbaerc='bat $HOME/Documents/keyboard-shorcuts/aerc.md'
 alias kbyazi='bat $HOME/Documents/keyboard-shorcuts/yazi.md'
 alias kbrmpc='bat $HOME/Documents/keyboard-shorcuts/rmpc.md'
+alias kbkhal='bat $HOME/Documents/keyboard-shorcuts/khal.md'
 alias key='bat ~/Documents/keyboard-shortcuts.md'
 alias l='ls -lAh'
 alias la='ls -a'
@@ -63,6 +69,7 @@ alias nv='nvim'
 alias open='xdg-open'
 alias pbcopy='wl-copy'
 alias pbpaste='wl-paste'
+alias rip='abcde'
 alias sourz='source $HOME/Projects/arch-dotfiles/zsh/.config/zsh/.zshrc && clear && fastfetch'
 alias spotify='brave-browser --app=https://open.spotify.com'
 alias st='nmcli connection show --active && speedtest-cli'
